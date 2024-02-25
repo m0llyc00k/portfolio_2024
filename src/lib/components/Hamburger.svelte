@@ -28,7 +28,7 @@
 	}
 
 	button {
-		color: white;
+		color: #363636;
 		background: transparent;
 		border: transparent;
 		display: flex;

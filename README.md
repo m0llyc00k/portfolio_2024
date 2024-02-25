@@ -62,6 +62,4 @@ Deploying your website on Netlify it's optional but I reccomand it in order to d
 
 You just need to fork this repo and linking it to your Netlify account.
 
-## Authors ❤️
 
-- Gianmarco - https://github.com/Ladvace

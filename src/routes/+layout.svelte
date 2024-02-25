@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Navbar from '$lib/components/NavBar.svelte';
+	// import Navbar from '$lib/components/NavBar.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import FaCopy from 'svelte-icons/fa/FaCopy.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
@@ -12,8 +12,6 @@
 	// import routes from '$lib/NavRoutes';
 
 	let copied = false;
-	const cookieEnabled = false;
-	$: showCookieModal = false;
 
 	interface CssVariables {
 		[name: string]: string;
@@ -41,43 +39,9 @@
 	const copy = () => {
 		navigator.clipboard.writeText(Email);
 	};
-
-	onMount(() => {
-		const showCookie = localStorage.getItem('showCookieModal');
-		if (showCookie !== null) showCookieModal = JSON.parse(showCookie);
-		else showCookieModal = true;
-	});
-
-	// beforeNavigate(({ to }) => {
-	// 	const pathName = to.pathname;
-	// 	const route = routes.find((route) => pathName === route.href);
-	// 	if (!route.customColor) {
-	// 		customBackground.set('#0a0908');
-	// 	} else customBackground.set(route.customColor);
-	// });
 </script>
 
 <svelte:body use:cssVariables={{ background: $customBackground }} />
-
-{#if showCookieModal && cookieEnabled}
-	<div class="cookieContainer">
-		<p>🍪 This website use <a href="privacy-policy">Cookies.</a></p>
-		<div
-			role="button"
-			tabindex="0"
-			on:keypress={() => {
-				showCookieModal = false;
-				localStorage.setItem('showCookieModal', 'false');
-			}}
-			on:click={() => {
-				showCookieModal = false;
-				localStorage.setItem('showCookieModal', 'false');
-			}}
-		>
-			&#10005;
-		</div>
-	</div>
-{/if}
 
 <Modal>
 	<div slot="content" class="modalContainer">
@@ -116,14 +80,11 @@
 		<Button>Send Email</Button>
 	</div>
 </Modal>
-<Navbar segment={$page.url.pathname} />
+<!-- <Navbar segment={$page.url.pathname} /> -->
 
 <slot />
 
-<footer>
-	Created by <a class="me" href="/about">Ladvace</a> ❤️ with
-	<span class="svelte">Svelte</span>
-</footer>
+<footer />
 
 <style>
 	* {
@@ -131,9 +92,9 @@
 	}
 
 	@font-face {
-		font-family: 'Fira Code', monospace;
+		font-family: 'Rubik', sans-serif;
 		font-display: optional;
-		src: url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+		src: url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 	}
 
 	:global(#svelte) {
@@ -153,14 +114,14 @@
 		width: 100%;
 		height: 100%;
 		overflow: auto;
-		font-family: 'Fira Code', monospace;
-		background-color: #0a0908;
+		font-family: 'Rubik', sans-serif;
+		background-color: #eeeeee;
 	}
 
 	:global(body) {
 		background-color: var(--background);
 		background-size: 200% 200%;
-		color: white;
+		color: #363636;
 		margin: 0;
 		box-sizing: border-box;
 		display: grid;
@@ -179,21 +140,21 @@
 		background: #ca3c25;
 	}
 
-	:global(::-webkit-scrollbar) {
+	/* :global(::-webkit-scrollbar) {
 		width: 8px;
 		height: 8px;
 		border-radius: 1px;
 	}
 
 	:global(::-webkit-scrollbar-thumb) {
-		background-color: #fafffd;
+		background-color: none;
 		border-radius: 3px;
 	}
 
 	:global(::-webkit-scrollbar-track) {
 		background-color: transparent;
 		border-radius: 1px;
-	}
+	} */
 
 	@media (min-width: 900px) {
 		:global(body) {

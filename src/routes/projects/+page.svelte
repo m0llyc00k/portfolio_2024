@@ -1,18 +1,21 @@
 <script>
 	import projects from '$lib/Projects';
+	import data from '$lib/Data.ts';
+
+	$: console.log(data);
 </script>
 
 <svelte:head>
-	<title>Gianmarco Cavallo — Projects</title>
+	<title>Molly Cook Escobar — Projects</title>
 </svelte:head>
 
 <div class="projectContainer">
 	<div class="projects">
 		<h1>Projects</h1>
-		<p class="note">
+		<!-- <p class="note">
 			Note: most of my projects are under NDA so I am unable to share those projects. If there is
 			anything you would like to see further, please feel free to contact me.
-		</p>
+		</p> -->
 		{#each projects as project}
 			<div class="project">
 				<div class="header">
@@ -85,8 +88,8 @@
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
-		color: white;
-		background: #111;
+		color: black;
+		background: white;
 		padding: 2rem;
 		width: 100%;
 		border-radius: 5px;

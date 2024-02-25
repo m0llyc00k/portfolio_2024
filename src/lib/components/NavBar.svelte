@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Burger from './Hamburger.svelte';
-	import Logo from '$lib/assets/logo.svg';
+	import Logo from '$lib/assets/icon.svg';
 	import routes from '$lib/NavRoutes';
 	let opened = false;
 	export let segment: string;
@@ -34,8 +34,13 @@
 <style>
 	:global(.logo) {
 		cursor: pointer;
-		height: 30px;
-		width: 30px;
+		height: 50px;
+		width: 50px;
+		fill: #357a8e;
+	}
+
+	.logo:hover {
+		fill: #767676;
 	}
 
 	.open {
@@ -47,12 +52,12 @@
 
 	.selected {
 		position: relative;
-		color: white;
+		color: #357a8e;
 	}
 
 	.button:hover::after {
 		content: '';
-		background: #ca3c25;
+		background: #357a8e;
 		display: block;
 		height: 3px;
 		width: 100%;
@@ -62,7 +67,7 @@
 
 	.button.selected:after {
 		content: '';
-		background: #ca3c25;
+		background: #767676;
 		display: block;
 		height: 3px;
 		width: 100%;
@@ -81,7 +86,7 @@
 
 	.innerContainer :global(a) {
 		height: 30px;
-		color: white;
+		color: #357a8e;
 	}
 
 	.NavBar {
@@ -125,11 +130,11 @@
 		text-decoration: none;
 		position: relative;
 		margin: 10px;
-		color: hsla(0, 0%, 100%, 0.4);
+		color: #357a8e;
 	}
 
 	.button.selected {
-		color: white;
+		color: #767676;
 	}
 
 	.burger :global(button) {

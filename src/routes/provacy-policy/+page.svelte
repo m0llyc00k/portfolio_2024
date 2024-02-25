@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Gianmarco Cavallo - Privacy policy</title>
+	<title>Molly Cook Escobar - Privacy policy</title>
 </svelte:head>
 
 <div class="container">
@@ -87,7 +87,7 @@
 			</li>
 			<li>
 				<p>
-					<strong>Website</strong> refers to Gianmarco Cavallo, accessible from
+					<strong>Website</strong> refers to Molly Cook Escobar, accessible from
 					<a href="gianmarco.xyz" rel="external nofollow noopener" target="_blank">gianmarco.xyz</a>
 				</p>
 			</li>

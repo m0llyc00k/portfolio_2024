@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Gianmarco Cavallo — About</title>
+	<title>Molly Cook Escobar — About</title>
 </svelte:head>
 
 <div class="container">
@@ -49,6 +49,7 @@
 		text-align: left;
 		margin: 0 auto;
 		box-sizing: border-box;
+		margin: 0 1em;
 	}
 
 	h1 {
