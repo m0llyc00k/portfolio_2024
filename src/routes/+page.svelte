@@ -78,14 +78,15 @@
 			{#each updatedProjects as project}
 				<a href={project.project_url}>
 					<div class="card">
-						{#if project.page_title == 'In Crisis, Again'}
+						{#if project.media_type == 'video'}
 							<div class="parent-element-to-video project-img">
 								<video
-									playbackRate="6"
+									playbackRate="2"
 									autoplay
 									loop
 									muted
-									src="src/lib/assets/video/demo_thesis.mp4"
+									alt={project.alt_text}
+									src="src/lib/assets/video/{project.img_url}.mp4"
 								>
 									<!-- <source src="./assets/video/demo_thesis.mp4" type="video/mp4" />
 								Your browser does not support the video tag. -->
@@ -94,6 +95,7 @@
 						{:else}
 							<div
 								class="project-img"
+								alt={project.alt_text}
 								style={`background-image: url('${path}${project.img_url}.png'); background-size: cover;`}
 							/>
 						{/if}
