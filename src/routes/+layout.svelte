@@ -100,7 +100,7 @@
 	:global(#svelte) {
 		width: 100vw;
 		height: 100%;
-		max-width: 900px;
+		max-width: 1020px;
 
 		display: flex;
 		flex-direction: column;

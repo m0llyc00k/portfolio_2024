@@ -5,6 +5,11 @@
 				"id": "1gERVE-pfpCrKwBMLMY09bLsa5Gp25OIejUINUhhpdwU",
 				"gid": "0",
 				"filepath": "src/lib/Data.ts"
+			},
+			{
+				"id": "1gERVE-pfpCrKwBMLMY09bLsa5Gp25OIejUINUhhpdwU",
+				"gid": "0",
+				"filepath": "src/lib/data/data.csv"
 			}
 		],
 		"doc": [

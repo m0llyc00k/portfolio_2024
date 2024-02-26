@@ -11,7 +11,6 @@
 		"format": "prettier --plugin-search-dir . --write .",
 		"fetch:data": "node scripts/fetch-sheet.js",
 		"fetch:gdoc": "node scripts/fetch_copy.js"
-
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.1.0",
@@ -37,6 +36,8 @@
 	"type": "module",
 	"dependencies": {
 		"archieml": "^0.5.0",
+		"csv-parse": "^5.5.3",
+		"csv-parser": "^3.0.0",
 		"html-entities": "^2.4.0",
 		"htmlparser2": "^9.0.0",
 		"node-fetch": "^3.3.2"

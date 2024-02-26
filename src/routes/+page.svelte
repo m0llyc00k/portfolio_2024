@@ -7,10 +7,12 @@
 	import Wave from '$lib/assets/wave.svg';
 
 	// import projects from '$lib/Projects';
-	import projects from '$lib/Data.ts';
+	import projects from '$lib/data/Data.ts';
 
 	let updatedProjects = projects.filter((d) => d.publish == 'TRUE');
 	const path = 'src/lib/assets/img/';
+
+	// $: console.log(projects);
 </script>
 
 <svelte:head>
@@ -27,7 +29,7 @@
 			>I'm a Front-End Developer and Visual Journalist committed to thoughtful storytelling.</span
 		>
 		<span>
-			Currently based in Queens and on the graphics desk at
+			Currently based in Queens and making graphics at
 			<a class="icon" href="https://www.nytimes.com/by/molly-cook-escobar">The New York Times</a
 			>.</span
 		>
@@ -75,27 +77,39 @@
 		<div class="projects">
 			{#each updatedProjects as project}
 				<a href={project.project_url}>
-					<div class="projectHeader">
-						<div
-							class="project"
-							style={`background-image: url('${path}${project.img_url}.png'); background-size: cover;`}
-						/>
-						<!-- <div class="techsContainer">
-							Technologies:
-							<div class="techs">
-								{#each project.technologies as tech}
-									<div>{tech}</div>
-								{/each}
+					<div class="card">
+						{#if project.page_title == 'In Crisis, Again'}
+							<div class="parent-element-to-video project-img">
+								<video
+									playbackRate="6"
+									autoplay
+									loop
+									muted
+									src="src/lib/assets/video/demo_thesis.mp4"
+								>
+									<!-- <source src="./assets/video/demo_thesis.mp4" type="video/mp4" />
+								Your browser does not support the video tag. -->
+								</video>
 							</div>
-						</div> -->
-						<div>
-							<h2>
+						{:else}
+							<div
+								class="project-img"
+								style={`background-image: url('${path}${project.img_url}.png'); background-size: cover;`}
+							/>
+						{/if}
+						<div class="project-info">
+							<h2 class="project-title">
 								{project.page_title}
 							</h2>
+							<p class="project-desc" style="color: #767676;"><i>{project.org}</i></p>
+							<p class="project-desc">{project.desc_text}</p>
+							<p class="project-desc">
+								<b>Responsibilities: </b>{project.responsibilities}
+							</p>
+							<p class="project-desc">
+								<b>Tools: </b>{project.tools}
+							</p>
 						</div>
-						<p class="project-desc">
-							{project.desc_text}
-						</p>
 					</div>
 				</a>
 			{/each}
@@ -104,7 +118,7 @@
 </section>
 
 <style>
-	a {
+	.icon {
 		color: #357a8e;
 		text-decoration: none;
 	}
@@ -146,6 +160,18 @@
 
 	.project-desc {
 		margin: 0;
+		font-size: 0.8rem;
+		/* line-height: 1.75em; */
+	}
+	.project-title {
+		text-decoration: none;
+	}
+	.card:hover h2 {
+		text-decoration: underline;
+	}
+	.project-info {
+		padding: 20px;
+		color: #363636;
 	}
 
 	.icons {
@@ -161,14 +187,25 @@
 		margin: 30px auto 0;
 	}
 
-	.projectHeader h2 {
+	.card h2 {
 		margin: 0.5em 0 0.5em 0;
 		line-height: 1.3;
 		font-size: 1.25em;
 	}
-	.projectHeader {
+	.card {
 		text-align: left;
+		background-color: #ffffff;
+		/* height: 350px; */
+		--radius: 5px;
+		border-radius: var(--radius);
+		border: 2px solid #cccccc;
+		transition: box-shadow 0.2s linear; /* Change border to box-shadow transition */
 	}
+
+	.card:hover {
+		box-shadow: 0px 0px 0px 10px #faf9f9; /* Increase shadow size instead of border width */
+	}
+
 	.icon {
 		color: #357a8e;
 		cursor: pointer;
@@ -192,20 +229,6 @@
 		}
 	}
 
-	@media (max-width: 600px) {
-		.icon {
-			color: #357a8e;
-			cursor: pointer;
-			transition: color 0.2s ease-in-out;
-			width: 25px;
-			gap: 15px;
-		}
-		.header {
-			background-color: #fff;
-			height: calc(100vh - 80px - 200px);
-		}
-	}
-
 	.projectContainer {
 		width: 100%;
 		/* max-width: 1200px; */
@@ -223,72 +246,65 @@
 		text-decoration: none;
 	}
 
-	.project {
-		text-align: start;
-		box-sizing: border-box;
-		display: flex;
-		flex-direction: column;
-		color: #363636;
-		background: white;
-		padding: 2rem;
-		width: 100%;
-		transition: transform 0.2s ease-in-out;
-		border-radius: 10px;
-
-		height: 250px;
-		/* width: 650px; */
+	.parent-element-to-video {
+		overflow: hidden;
 		margin: 0 auto;
+	}
+	.project-img {
+		width: 100%;
+		height: 200px; /* Set a fixed height for the container */
+		border-top-left-radius: calc(0.25rem - 1px);
+		border-top-right-radius: calc(0.25rem - 1px);
+		overflow: hidden; /* Hide overflowing content */
+		background-position-x: center;
 		background-position-y: center;
 	}
 
-	.project:hover {
-		transition: 0.3s transform ease;
-		box-shadow: 0px 14px 14px rgba(0, 0, 0, 0.25);
-		opacity: 0.75;
+	.project-img video {
+		width: 100%;
+		height: auto; /* Allow the video to maintain its aspect ratio */
+		object-fit: cover; /* Cover the entire container */
+		object-position: center; /* Center the video horizontally and vertically */
+		transform: translate(0px, -20%);
 	}
 
 	.projects {
 		width: 100%;
 		margin: 50px auto;
 		display: grid;
-		grid-gap: 1rem;
+		grid-gap: 30px;
 		grid-template-columns: 1fr;
 		margin-bottom: 10px;
-	}
-
-	.techsContainer {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
-	}
-
-	.techs {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	.techs > div {
-		margin: 0 0 0 10px;
 	}
 
 	@media (min-width: 900px) {
 		.projectContainer {
 			padding: 0;
 		}
-		.projects > h1 {
-			font-size: 48px;
-			margin: 50px 0 0 0;
-		}
 
 		.projects {
 			grid-template-columns: 1fr;
 		}
+	}
 
-		.projects .project {
-			min-height: 200px;
+	@media (max-width: 600px) {
+		.icon {
+			color: #357a8e;
+			cursor: pointer;
+			transition: color 0.2s ease-in-out;
+			width: 25px;
+			gap: 15px;
 		}
-		.button {
-			max-width: 200px;
+		.header {
+			background-color: #fff;
+			height: calc(100vh - 80px - 200px);
+		}
+		.project-img video {
+			width: 100%;
+			height: auto; /* Allow the video to maintain its aspect ratio */
+			object-fit: cover; /* Cover the entire container */
+			object-position: center; /* Center the video horizontally and vertically */
+			transform: translate(0px, 0);
 		}
 	}
 
@@ -301,7 +317,7 @@
 	.projectContainer .projects {
 		display: grid;
 		grid-template-columns: 1fr; /* By default, 1 column */
-		grid-gap: 40px;
+		grid-gap: px;
 		margin-top: 30px;
 	}
 
@@ -309,5 +325,17 @@
 		.projectContainer .projects {
 			grid-template-columns: repeat(2, 1fr); /* 2 columns on screens wider than 600px */
 		}
+	}
+
+	.projects {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		grid-gap: 20px;
+	}
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		height: 100%; /* Ensures all card elements take up the same height */
 	}
 </style>
