@@ -28,20 +28,6 @@ const projects = [
     "publish": "TRUE"
   },
   {
-    "page_title": "Mapping the Wildfire Destruction in Lahaina",
-    "project_url": "https://www.nytimes.com/interactive/2023/08/11/us/hawaii-wildfire-lahaina-damage.html",
-    "img_url": "",
-    "img_name": "wildfire_lahaina",
-    "media_type": "video",
-    "alt_text": "A video showing satellite imagery of Lahaina",
-    "date": "",
-    "org": "The New York Times",
-    "desc_text": "Surveying the community of Lahaina destroyed by a wildfire using satellite imagery.",
-    "responsibilities": "Story planning, data analysis, reporting & development",
-    "tools": "Felt, Svelte, Illustrator",
-    "publish": "TRUE"
-  },
-  {
     "page_title": "The Lineup for the First Republican Presidential Debate",
     "project_url": "https://www.nytimes.com/interactive/2023/08/01/us/elections/republican-debate-qualifications.html",
     "img_url": "",
@@ -53,6 +39,20 @@ const projects = [
     "desc_text": "A tracker determining which candidates have met necessary qualifications for the republican primary debate.",
     "responsibilities": "Data gathering, development & graphics",
     "tools": "Svelte, Layercake, ai2html, javascript, archieML",
+    "publish": "TRUE"
+  },
+  {
+    "page_title": "Mapping the Wildfire Destruction in Lahaina",
+    "project_url": "https://www.nytimes.com/interactive/2023/08/11/us/hawaii-wildfire-lahaina-damage.html",
+    "img_url": "",
+    "img_name": "wildfire_lahaina",
+    "media_type": "video",
+    "alt_text": "A video showing satellite imagery of Lahaina",
+    "date": "",
+    "org": "The New York Times",
+    "desc_text": "Surveying the community of Lahaina destroyed by a wildfire using satellite imagery.",
+    "responsibilities": "Story planning, data analysis, reporting & development",
+    "tools": "Felt, Svelte, Illustrator",
     "publish": "TRUE"
   },
   {
