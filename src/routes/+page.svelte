@@ -312,6 +312,18 @@
 			object-position: center; /* Center the video horizontally and vertically */
 			transform: translate(0px, 0);
 		}
+
+		.projectContainer {
+			width: 100%;
+			/* max-width: 1200px; */
+			display: flex;
+			justify-content: center;
+			box-sizing: border-box;
+			text-align: center;
+			padding: 0 1em 1em 1em;
+			margin: 0 auto;
+			text-align: center;
+		}
 	}
 
 	@media (min-width: 600px) {
