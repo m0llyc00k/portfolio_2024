@@ -1,6 +1,7 @@
 const projects = [
   {
     "page_title": "Third Year Anniversary of the Jan. 6 Riot",
+    "project_url": "https://www.nytimes.com/interactive/2024/01/04/us/january-6-capitol-trump-investigation.html",
     "img_url": "",
     "img_name": "jan-6",
     "media_type": "video",
@@ -14,6 +15,7 @@ const projects = [
   },
   {
     "page_title": "The Summer of Strikes",
+    "project_url": "https://www.nytimes.com/interactive/2023/09/03/business/economy/strikes-union-sag-uaw.html",
     "img_url": "",
     "img_name": "strikes",
     "media_type": "image",
@@ -27,6 +29,7 @@ const projects = [
   },
   {
     "page_title": "Mapping the Wildfire Destruction in Lahaina",
+    "project_url": "https://www.nytimes.com/interactive/2023/08/11/us/hawaii-wildfire-lahaina-damage.html",
     "img_url": "",
     "img_name": "wildfire_lahaina",
     "media_type": "video",
@@ -40,6 +43,7 @@ const projects = [
   },
   {
     "page_title": "The Lineup for the First Republican Presidential Debate",
+    "project_url": "https://www.nytimes.com/interactive/2023/08/01/us/elections/republican-debate-qualifications.html",
     "img_url": "",
     "img_name": "campaign-donors",
     "media_type": "image",
@@ -53,6 +57,7 @@ const projects = [
   },
   {
     "page_title": "Live Debate Tracker",
+    "project_url": "https://www.nytimes.com/interactive/2023/08/23/us/politics/republican-debate-live-tracker.html",
     "img_url": "",
     "img_name": "first-debate",
     "media_type": "image",
@@ -66,6 +71,7 @@ const projects = [
   },
   {
     "page_title": "NYT/ Siena Polls",
+    "project_url": "https://www.nytimes.com/2023/11/06/us/politics/trump-biden-times-siena-poll.html",
     "img_url": "",
     "img_name": "trump_biden_polls",
     "media_type": "image",
@@ -79,6 +85,7 @@ const projects = [
   },
   {
     "page_title": "Keeping Track of the Trump Investigations",
+    "project_url": "https://www.nytimes.com/interactive/2023/us/trump-investigations-charges-indictments.html",
     "img_url": "https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/305304fb2d7f58164d9c1af5ae652a5aa9e875f0/src/lib/assets/img/trump-investigations.png",
     "img_name": "trump-investigations",
     "media_type": "image",
@@ -92,6 +99,7 @@ const projects = [
   },
   {
     "page_title": "Which Presidential Candidates are Leading the 2024 Money Race?",
+    "project_url": "https://www.nytimes.com/interactive/2023/07/16/us/politics/campaign-finance-july-2023.html",
     "img_url": "https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/305304fb2d7f58164d9c1af5ae652a5aa9e875f0/src/lib/assets/img/campaign-finance.png",
     "img_name": "campaign-finance",
     "media_type": "image",
@@ -105,6 +113,7 @@ const projects = [
   },
   {
     "page_title": "Where U.A.W. Strikes are Happening",
+    "project_url": "https://www.nytimes.com/interactive/2023/09/15/business/uaw-strike-map.html",
     "img_url": "",
     "img_name": "uaw-map",
     "media_type": "image",
@@ -118,6 +127,7 @@ const projects = [
   },
   {
     "page_title": "Live Vote Count: House Removes McCarthey as Speaker",
+    "project_url": "https://www.nytimes.com/interactive/2023/10/03/us/politics/mccarthy-house-speaker-vote-live.html",
     "img_url": "",
     "img_name": "mccarthy",
     "media_type": "image",
@@ -131,6 +141,7 @@ const projects = [
   },
   {
     "page_title": "What It Means to Be a Texan Is Changing in Surprising Ways",
+    "project_url": "https://www.nytimes.com/2023/11/13/us/texas-identity-population-politics-future.html",
     "img_url": "",
     "img_name": "texas",
     "media_type": "image",
@@ -144,6 +155,7 @@ const projects = [
   },
   {
     "page_title": "The Long Wait for Help as Massacres Unfolded in Israel",
+    "project_url": "https://www.nytimes.com/interactive/2023/10/11/world/middleeast/israel-gaza-hamas-attack-timeline.html",
     "img_url": "",
     "img_name": "gaza-israel",
     "media_type": "image",
@@ -157,6 +169,7 @@ const projects = [
   },
   {
     "page_title": "Political Podcasts",
+    "project_url": "https://www.brookings.edu/articles/audible-reckoning-how-top-political-podcasters-spread-unsubstantiated-and-false-claims/",
     "img_url": "",
     "img_name": "political-podcasts",
     "media_type": "video",
@@ -170,6 +183,7 @@ const projects = [
   },
   {
     "page_title": "Ukraine Index",
+    "project_url": "https://www.brookings.edu/articles/ukraine-index-tracking-developments-in-the-ukraine-war/",
     "img_url": "",
     "img_name": "ukraine-index",
     "media_type": "image",
@@ -183,6 +197,7 @@ const projects = [
   },
   {
     "page_title": "Vulnerability Indicator",
+    "project_url": "https://www.brookings.edu/articles/despair-and-vulnerability-to-information-an-interactive-tool/",
     "img_url": "",
     "img_name": "vul-indicator",
     "media_type": "image",
@@ -196,6 +211,7 @@ const projects = [
   },
   {
     "page_title": "Global Weather Dashboard",
+    "project_url": "",
     "img_url": "",
     "img_name": "",
     "media_type": "",
@@ -209,6 +225,7 @@ const projects = [
   },
   {
     "page_title": "Temporary Objects with Permanent Impact: Ephemera at the Smithsonian",
+    "project_url": "",
     "img_url": "",
     "img_name": "",
     "media_type": "",
@@ -222,6 +239,7 @@ const projects = [
   },
   {
     "page_title": "Mapping Vulnerability in the Opioid Crisis",
+    "project_url": "https://opioid-vulnerability-map.netlify.app/",
     "img_url": "",
     "img_name": "opioid_map",
     "media_type": "image",
@@ -235,6 +253,7 @@ const projects = [
   },
   {
     "page_title": "In Crisis, Again",
+    "project_url": "https://in-crisis-again.netlify.app/",
     "img_url": "https://parsons.nyc/archive/assets/MollyCook_2022.a755c9cc.mp4",
     "img_name": "demo_thesis",
     "media_type": "video",
@@ -248,6 +267,7 @@ const projects = [
   },
   {
     "page_title": "Titles and Topics: Ephemera at the Smithsonian",
+    "project_url": "",
     "img_url": "",
     "img_name": "",
     "media_type": "",
@@ -261,6 +281,7 @@ const projects = [
   },
   {
     "page_title": "Thematic Maps: QGIS",
+    "project_url": "",
     "img_url": "",
     "img_name": "",
     "media_type": "",
@@ -274,6 +295,7 @@ const projects = [
   },
   {
     "page_title": "Raster & Dot Density Maps: QGIS",
+    "project_url": "",
     "img_url": "",
     "img_name": "",
     "media_type": "",
@@ -287,6 +309,7 @@ const projects = [
   },
   {
     "page_title": "Instacart Maps: Halloween",
+    "project_url": "https://www.instacart.com/company/updates/halloweens-ultimate-candy-contenders/",
     "img_url": "",
     "img_name": "halloween_detail_2",
     "media_type": "image",
@@ -300,6 +323,7 @@ const projects = [
   },
   {
     "page_title": "Instacart Maps: Summer",
+    "project_url": "https://www.instacart.com/company/updates/instacarts-summer-bbq-report-is-hot-off-the-grill/",
     "img_url": "",
     "img_name": "",
     "media_type": "",
@@ -313,6 +337,7 @@ const projects = [
   },
   {
     "page_title": "Yelp Economic Average",
+    "project_url": "https://data.yelp.com/yea-q2-2022.html",
     "img_url": "",
     "img_name": "yelp_reservations",
     "media_type": "image",
@@ -326,6 +351,7 @@ const projects = [
   },
   {
     "page_title": "3D Display Production",
+    "project_url": "https://mollybcook.com/",
     "img_url": "",
     "img_name": "display-overview",
     "media_type": "image",
@@ -339,6 +365,7 @@ const projects = [
   },
   {
     "page_title": "T",
+    "project_url": "",
     "img_url": "",
     "img_name": "",
     "media_type": "",
