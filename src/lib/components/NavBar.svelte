@@ -80,7 +80,7 @@
 		justify-content: space-between;
 		align-items: center;
 		width: 100%;
-		max-width: 900px;
+		/* max-width: 900px; */
 		box-sizing: border-box;
 	}
 

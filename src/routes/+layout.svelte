@@ -125,7 +125,7 @@
 		margin: 0;
 		box-sizing: border-box;
 		display: grid;
-		line-height: 1.75;
+		/* line-height: 1.75; */
 		place-items: center;
 		height: 100%;
 		overflow-x: hidden;
@@ -158,7 +158,7 @@
 
 	@media (min-width: 900px) {
 		:global(body) {
-			padding: 0 100px;
+			/* padding: 0 1em 1em 1em; */
 		}
 	}
 
@@ -226,7 +226,7 @@
 		font-size: 16px;
 		font-weight: 400;
 		padding: 30px 0;
-		max-width: 900px;
+		/* max-width: 900px; */
 		text-align: center;
 		width: 100%;
 	}

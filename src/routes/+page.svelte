@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import FaLinkedin from 'svelte-icons/fa/FaLinkedin.svelte';
 	import FaGithub from 'svelte-icons/fa/FaGithub.svelte';
 	import FaEnvelope from 'svelte-icons/fa/FaEnvelope.svelte';
@@ -10,70 +10,77 @@
 	import projects from '$lib/data/Data.ts';
 
 	let updatedProjects = projects.filter((d) => d.publish == 'TRUE');
+
 	const path =
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/305304fb2d7f58164d9c1af5ae652a5aa9e875f0/src/lib/assets/img/';
 
 	const pathVideo =
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/305304fb2d7f58164d9c1af5ae652a5aa9e875f0/src/lib/assets/video/';
-	// $: console.log(projects);
+
+	let change_img: boolean;
+	$: change_img;
 </script>
 
 <svelte:head>
 	<title>Molly Cook Escobar - Portfolio</title>
 </svelte:head>
 <section class="header">
-	<h1>
-		Hi <img src={Wave} alt="waving hand" class="hand-icon" />, I'm<br /><span
-			>Molly Cook Escobar</span
-		>
-	</h1>
-	<div class="intro">
-		<span
-			>I'm a Front-End Developer and Visual Journalist committed to thoughtful storytelling.</span
-		>
-		<span>
-			Currently based in Queens and making graphics at
-			<a class="icon" href="https://www.nytimes.com/by/molly-cook-escobar">The New York Times</a
-			>.</span
-		>
-	</div>
-	<div class="icons">
-		<div
-			role="button"
-			tabindex="0"
-			on:keypress={() => {
-				modalOpened.set(true);
-			}}
-			on:click={() => {
-				modalOpened.set(true);
-			}}
-		>
-			<div class="icon">
-				<FaEnvelope />
-			</div>
+	<div>
+		<h1>
+			<!-- Hi <img src={Wave} alt="waving hand" class="hand-icon" />, I'm<br /><span
+				>Molly Cook Escobar</span
+			> -->
+			Molly Cook Escobar
+		</h1>
+		<div class="intro">
+			<span
+				>Visual Journalist and creative Front-End Developer committed to thoughtful storytelling.</span
+			>
+			<span>
+				Currently based in Queens and making graphics at
+				<a class="icon" href="https://www.nytimes.com/by/molly-cook-escobar">The New York Times</a
+				>.</span
+			>
 		</div>
+		<div class="icons">
+			<div
+				role="button"
+				tabindex="0"
+				on:keypress={() => {
+					modalOpened.set(true);
+				}}
+				on:click={() => {
+					modalOpened.set(true);
+				}}
+			>
+				<div class="icon">
+					<FaEnvelope />
+				</div>
+			</div>
 
-		<a
-			href="https://github.com/m0llyc00k"
-			aria-label="GitHub"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<div class="icon">
-				<FaGithub />
-			</div>
-		</a>
-		<a
-			href="https://www.linkedin.com/in/molly-cook-escobar/"
-			aria-label="Linkedin"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<div class="icon">
-				<FaLinkedin />
-			</div>
-		</a>
+			<a
+				href="https://github.com/m0llyc00k"
+				aria-label="GitHub"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<div class="icon">
+					<FaGithub />
+				</div>
+			</a>
+			<a
+				href="https://www.linkedin.com/in/molly-cook-escobar/"
+				aria-label="Linkedin"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<div class="icon">
+					<FaLinkedin />
+				</div>
+			</a>
+		</div>
 	</div>
+	<div>Hello world</div>
 </section>
 <section>
 	<div class="projectContainer">
@@ -99,16 +106,22 @@
 						{:else}
 							<div
 								class="project-img"
+								role="button"
+								tabindex="0"
 								alt={project.alt_text}
-								style={`background-image: url('${path}${project.img_name}.png'); background-size: cover;`}
+								style={`background-image: url('${path}${project.img_name}.png'); background-size: cover; 								`}
 							/>
 						{/if}
 						<div class="project-info">
-							<h2 class="project-title">
-								{project.page_title}
-							</h2>
-							<p class="project-desc" style="color: #767676;"><i>{project.org}</i></p>
-							<p class="project-desc">{project.desc_text}</p>
+							<div style="margin-bottom:.75em;">
+								<h2 class="project-title">
+									{project.page_title}
+								</h2>
+								<p class="project-desc org" style="color: #767676;">{project.org}</p>
+							</div>
+							<p class="project-desc">
+								{project.desc_text}
+							</p>
 							<p class="project-desc">
 								<b>Responsibilities: </b>{project.responsibilities}
 							</p>
@@ -145,7 +158,7 @@
 	}
 
 	.header h1 {
-		font-weight: 300;
+		font-weight: 700;
 		margin: 0px 10px 0;
 		font-size: 2em;
 		line-height: 1.2em;
@@ -166,8 +179,9 @@
 
 	.project-desc {
 		margin: 0;
-		font-size: 0.8rem;
-		/* line-height: 1.75em; */
+		font-size: 0.85rem;
+		padding: 0.25em 0;
+		line-height: 1.5em;
 	}
 	.project-title {
 		text-decoration: none;
@@ -194,7 +208,7 @@
 	}
 
 	.card h2 {
-		margin: 0.5em 0 0.5em 0;
+		margin: 0.5em 0 0 0;
 		line-height: 1.3;
 		font-size: 1.25em;
 	}
@@ -237,7 +251,7 @@
 
 	.projectContainer {
 		width: 100%;
-		/* max-width: 1200px; */
+		max-width: 1200px;
 		display: flex;
 		justify-content: center;
 		box-sizing: border-box;
@@ -285,7 +299,15 @@
 
 	@media (min-width: 900px) {
 		.projectContainer {
-			padding: 0;
+			width: 100%;
+			/* max-width: 1200px; */
+			display: flex;
+			justify-content: center;
+			box-sizing: border-box;
+			text-align: center;
+			padding: 0 1em 1em 1em;
+			margin: 0 auto;
+			text-align: center;
 		}
 
 		.projects {
