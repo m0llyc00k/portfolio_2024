@@ -25,62 +25,59 @@
 	<title>Molly Cook Escobar - Portfolio</title>
 </svelte:head>
 <section class="header">
-	<div>
-		<h1>
-			<!-- Hi <img src={Wave} alt="waving hand" class="hand-icon" />, I'm<br /><span
+	<h1>
+		<!-- Hi <img src={Wave} alt="waving hand" class="hand-icon" />, I'm<br /><span
 				>Molly Cook Escobar</span
 			> -->
-			Molly Cook Escobar
-		</h1>
-		<div class="intro">
-			<span
-				>Visual Journalist and creative Front-End Developer committed to thoughtful storytelling.</span
-			>
-			<span>
-				Currently based in Queens and making graphics at
-				<a class="icon" href="https://www.nytimes.com/by/molly-cook-escobar">The New York Times</a
-				>.</span
-			>
-		</div>
-		<div class="icons">
-			<div
-				role="button"
-				tabindex="0"
-				on:keypress={() => {
-					modalOpened.set(true);
-				}}
-				on:click={() => {
-					modalOpened.set(true);
-				}}
-			>
-				<div class="icon">
-					<FaEnvelope />
-				</div>
-			</div>
-
-			<a
-				href="https://github.com/m0llyc00k"
-				aria-label="GitHub"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<div class="icon">
-					<FaGithub />
-				</div>
-			</a>
-			<a
-				href="https://www.linkedin.com/in/molly-cook-escobar/"
-				aria-label="Linkedin"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<div class="icon">
-					<FaLinkedin />
-				</div>
-			</a>
-		</div>
+		Molly Cook Escobar
+	</h1>
+	<div class="intro">
+		<span
+			>Visual Journalist and creative Front-End Developer committed to thoughtful storytelling.</span
+		>
+		<span>
+			Currently based in Queens and making graphics at
+			<a class="icon" href="https://www.nytimes.com/by/molly-cook-escobar">The New York Times</a
+			>.</span
+		>
 	</div>
-	<div>Hello world</div>
+	<div class="icons">
+		<div
+			role="button"
+			tabindex="0"
+			on:keypress={() => {
+				modalOpened.set(true);
+			}}
+			on:click={() => {
+				modalOpened.set(true);
+			}}
+		>
+			<div class="icon">
+				<FaEnvelope />
+			</div>
+		</div>
+
+		<a
+			href="https://github.com/m0llyc00k"
+			aria-label="GitHub"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<div class="icon">
+				<FaGithub />
+			</div>
+		</a>
+		<a
+			href="https://www.linkedin.com/in/molly-cook-escobar/"
+			aria-label="Linkedin"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<div class="icon">
+				<FaLinkedin />
+			</div>
+		</a>
+	</div>
 </section>
 <section>
 	<div class="projectContainer">
