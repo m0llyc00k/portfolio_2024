@@ -17,8 +17,8 @@
 	const pathVideo =
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/305304fb2d7f58164d9c1af5ae652a5aa9e875f0/src/lib/assets/video/';
 
-	let change_img: boolean;
-	$: change_img;
+	const sketch_path =
+		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/';
 </script>
 
 <svelte:head>
@@ -32,9 +32,7 @@
 		Molly Cook Escobar
 	</h1>
 	<div class="intro">
-		<span
-			>Visual Journalist and creative Front-End Developer committed to thoughtful storytelling.</span
-		>
+		<span>Visual Journalist and Front-End Developer committed to thoughtful storytelling.</span>
 		<span>
 			Currently based in Queens and making graphics at
 			<a class="icon" href="https://www.nytimes.com/by/molly-cook-escobar">The New York Times</a
@@ -106,7 +104,7 @@
 								role="button"
 								tabindex="0"
 								alt={project.alt_text}
-								style={`background-image: url('${path}${project.img_name}.png'); background-size: cover; 								`}
+								style={`background-image: url('${path}${project.img_name}.png'); background-size: cover;`}
 							/>
 						{/if}
 						<div class="project-info">
@@ -146,7 +144,7 @@
 
 		display: flex;
 		flex-direction: column;
-		height: calc(100vh - 80px - 310px);
+		height: calc(100vh - 80px - 400px);
 		justify-content: center;
 		align-items: center;
 
