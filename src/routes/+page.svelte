@@ -21,8 +21,10 @@
 <svelte:head>
 	<title>Molly Cook Escobar - Portfolio</title>
 </svelte:head>
-<section class="header">
-	<div style={`background-image: url(' ${path}map_sketch.png'); background-size: cover;`} />
+<section
+	class="header"
+	style={`background-image: url(' ${path}map_sketch.png'); background-size: cover;`}
+>
 	<h1>
 		<!-- Hi <img src={Wave} alt="waving hand" class="hand-icon" />, I'm<br /><span
 				>Molly Cook Escobar</span
