@@ -1,52 +1,72 @@
-<div class="projectContainer">
-	<div class="projects">hello</div>
-	<div class="projects">hello</div>
-	<div class="projects">hello</div>
-	<div class="projects">hello</div>
-	<div class="projects">hello</div>
-	<div class="projects">hello</div>
-	<div class="projects">hello</div>
-	<div class="projects">hello</div>
-</div>
+<script>
+	import { images } from './images';
+	import { onMount } from 'svelte';
+
+	const load = (async () => {
+		return images.map((img) => ({
+			src: `https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/${img.url}`
+		}));
+	})();
+
+	onMount(() => {
+		// Save the current URL in local storage when the component mounts
+		localStorage.setItem('previousPage', window.location.href);
+	});
+</script>
+
+{#await load}
+	... loading
+{:then images}
+	<div class="projectContainer">
+		<h1 class="title">A collection of maps made in QGIS</h1>
+		{#each images as image, index}
+			<!-- <Gallery {images}> -->
+			<img class="img" src={images[index].src} alt="" />
+			<!-- </Gallery> -->
+		{/each}
+	</div>
+	<button
+		style="width: 100px; margin: 0 auto; margin-top: 1em; color: #767676;"
+		on:click={() => (window.location.href = '/')}>Back to Main</button
+	>
+{/await}
 
 <style>
-	.container {
-		max-width: 900px;
-		padding: 1em;
-		display: flex;
-		justify-content: center;
+	.img {
+		transition: transform 225ms ease-in-out;
+		width: 50%;
+		padding-top: 3em;
+	}
+	.img:hover {
+		transform: scale(1.1);
+	}
+	.title {
+		padding-bottom: 0;
 	}
 	.projectContainer {
 		width: 100%;
 		max-width: 1200px;
-		display: flex;
-		justify-content: center;
-		box-sizing: border-box;
-		text-align: center;
 		padding: 0 1em 1em 1em;
 		margin: 0 auto;
 		text-align: center;
 		padding-top: 5em;
 	}
-	.projects {
-		width: 100%;
-		margin: 50px auto;
-		display: grid;
-		grid-gap: 30px;
-		grid-template-columns: 1fr;
-		margin-bottom: 10px;
-	}
 
-	h1 {
-		font-weight: 700;
-		margin: 0 0 50px 0;
-		font-size: 36px;
-		text-align: start;
-	}
-
-	@media (min-width: 900px) {
-		h1 {
-			font-size: 48px;
+	@media (max-width: 600px) {
+		.projectContainer {
+			width: 90%;
+			max-width: 1200px;
+			padding: 0;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.img {
+			transition: transform 225ms ease-in-out;
+			width: 100%;
+			padding-top: 2em;
+		}
+		.title {
+			padding-bottom: 0.25em;
 		}
 	}
 </style>

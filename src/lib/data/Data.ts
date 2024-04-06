@@ -445,7 +445,7 @@ const projects = [
     "responsibilities": "Data analysis and mapmaking",
     "tools": "QGIS",
     "awards": "",
-    "publish": "FALSE"
+    "publish": "TRUE"
   },
   {
     "page_title": "3D Display Production",

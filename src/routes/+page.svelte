@@ -22,7 +22,10 @@
 	<title>Molly Cook Escobar - Portfolio</title>
 </svelte:head>
 <section class="header-wrap">
-	<img src="{path}map_sketch.png" class="header-bg" alt="" />
+	<!-- <div
+		style={`background-image: url('${path}map_sketch.png'); background-size: contain;`}
+		class="header-bg"
+	/> -->
 	<div class="header-content header">
 		<h1>
 			<!-- Hi <img src={Wave} alt="waving hand" class="hand-icon" />, I'm<br /><span
@@ -31,7 +34,7 @@
 			Molly Cook Escobar
 		</h1>
 		<div class="intro">
-			<span>Visual Journalist and Front-End Developer committed to thoughtful storytelling.</span>
+			<span>Visual Journalist and Graphics Developer committed to thoughtful storytelling.</span>
 			<span>
 				Currently based in Queens and making graphics at
 				<a class="icon" href="https://www.nytimes.com/by/molly-cook-escobar">The New York Times</a
@@ -88,9 +91,11 @@
 							{#if project.media_type == 'video'}
 								<div class="parent-element-to-video project-img">
 									<video
-										style={project.img_name == 'jan-6' || project.img_name == 'demo_thesis'
+										style={project.img_sketch
 											? 'transform: scale(2); top: 25%;'
-											: ''}
+											: project.img_name == 'jan-6'
+												? 'opacity: 0.4; transform: scale(2); top: 25%;'
+												: ''}
 										playbackRate="4"
 										autoplay
 										playsinline
@@ -201,7 +206,8 @@
 		left: 0;
 		top: 0;
 		width: 100%;
-		height: auto;
+		height: 100%;
+		opacity: 75%;
 	}
 
 	/* .header-content {
@@ -209,18 +215,20 @@
 		background-color: rgba(235, 235, 235, 0.8);
 		box-shadow: 0 0 50px 50px rgba(235, 235, 235, 0.25) inset;
 	} */
-	.header-content::before {
+	/* .header-content::before {
+		--width-blur: 90%;
+		--height-blur: 100%;
 		content: '';
 		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(235, 235, 235, 0.8); /* Same background color as header content */
-		border-radius: 50px; /* Adjust the radius as needed */
-		z-index: -1; /* Ensure the pseudo-element is behind the content */
-		filter: blur(50px); /* Adjust the blur amount as needed */
-	}
+		width: var(--width-blur);
+		height: var(--height-blur);
+		left: calc((100% - var(--width-blur)) / 2);
+		top: calc((100% - var(--height-blur)) / 2);
+		background-color: rgba(235, 235, 235, 1); /* Same background color as header content */
+	/* border-radius: 5px; /* Adjust the radius as needed */
+	/* z-index: -1; Ensure the pseudo-element is behind the content */
+	/* filter: blur(4px); Adjust the blur amount as needed */
+	/* }  */
 
 	.header-content {
 		position: relative; /* Ensure the pseudo-element is positioned relative to the header content */
@@ -359,7 +367,7 @@
 		}
 		.header {
 			background-color: #fff;
-			height: calc(100vh - 80px - 200px);
+			height: calc(90vh - 80px - 200px);
 		}
 		.project-img video {
 			width: 100%;
@@ -385,6 +393,9 @@
 	@media (min-width: 600px) {
 		.projects {
 			grid-template-columns: 1fr;
+		}
+		.projectContainer {
+			padding-top: 1em;
 		}
 	}
 
