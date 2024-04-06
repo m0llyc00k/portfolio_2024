@@ -21,60 +21,60 @@
 <svelte:head>
 	<title>Molly Cook Escobar - Portfolio</title>
 </svelte:head>
-<section
-	class="header"
-	style={`background-image: url(' ${path}map_sketch.png'); background-size: cover;`}
->
-	<h1>
-		<!-- Hi <img src={Wave} alt="waving hand" class="hand-icon" />, I'm<br /><span
+<section class="header-wrap">
+	<img src="{path}map_sketch.png" class="header-bg" alt="" />
+	<div class="header-content header">
+		<h1>
+			<!-- Hi <img src={Wave} alt="waving hand" class="hand-icon" />, I'm<br /><span
 				>Molly Cook Escobar</span
 			> -->
-		Molly Cook Escobar
-	</h1>
-	<div class="intro">
-		<span>Visual Journalist and Front-End Developer committed to thoughtful storytelling.</span>
-		<span>
-			Currently based in Queens and making graphics at
-			<a class="icon" href="https://www.nytimes.com/by/molly-cook-escobar">The New York Times</a
-			>.</span
-		>
-	</div>
-	<div class="icons">
-		<div
-			role="button"
-			tabindex="0"
-			on:keypress={() => {
-				modalOpened.set(true);
-			}}
-			on:click={() => {
-				modalOpened.set(true);
-			}}
-		>
-			<div class="icon">
-				<FaEnvelope />
-			</div>
+			Molly Cook Escobar
+		</h1>
+		<div class="intro">
+			<span>Visual Journalist and Front-End Developer committed to thoughtful storytelling.</span>
+			<span>
+				Currently based in Queens and making graphics at
+				<a class="icon" href="https://www.nytimes.com/by/molly-cook-escobar">The New York Times</a
+				>.</span
+			>
 		</div>
+		<div class="icons">
+			<div
+				role="button"
+				tabindex="0"
+				on:keypress={() => {
+					modalOpened.set(true);
+				}}
+				on:click={() => {
+					modalOpened.set(true);
+				}}
+			>
+				<div class="icon">
+					<FaEnvelope />
+				</div>
+			</div>
 
-		<a
-			href="https://github.com/m0llyc00k"
-			aria-label="GitHub"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<div class="icon">
-				<FaGithub />
-			</div>
-		</a>
-		<a
-			href="https://www.linkedin.com/in/molly-cook-escobar/"
-			aria-label="Linkedin"
-			target="_blank"
-			rel="noopener noreferrer"
-		>
-			<div class="icon">
-				<FaLinkedin />
-			</div>
-		</a>
+			<a
+				href="https://github.com/m0llyc00k"
+				aria-label="GitHub"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<div class="icon">
+					<FaGithub />
+				</div>
+			</a>
+			<a
+				href="https://www.linkedin.com/in/molly-cook-escobar/"
+				aria-label="Linkedin"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<div class="icon">
+					<FaLinkedin />
+				</div>
+			</a>
+		</div>
 	</div>
 </section>
 <section>
@@ -190,6 +190,42 @@
 		display: flex;
 		flex-direction: column;
 		gap: 15px;
+	}
+	.header-wrap {
+		overflow: hidden;
+		position: relative;
+	}
+
+	.header-bg {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: auto;
+	}
+
+	/* .header-content {
+		position: relative;
+		background-color: rgba(235, 235, 235, 0.8);
+		box-shadow: 0 0 50px 50px rgba(235, 235, 235, 0.25) inset;
+	} */
+	.header-content::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(235, 235, 235, 0.8); /* Same background color as header content */
+		border-radius: 50px; /* Adjust the radius as needed */
+		z-index: -1; /* Ensure the pseudo-element is behind the content */
+		filter: blur(50px); /* Adjust the blur amount as needed */
+	}
+
+	.header-content {
+		position: relative; /* Ensure the pseudo-element is positioned relative to the header content */
+		z-index: 1; /* Ensure the header content is above the pseudo-element */
+		/* Other existing styles for .header-content */
 	}
 
 	.project-desc {
