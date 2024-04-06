@@ -85,8 +85,10 @@
 							{#if project.media_type == 'video'}
 								<div class="parent-element-to-video project-img">
 									<video
-										style={project.img_name == 'jan-6' ? 'transform: scale(2); top: 25%;' : ''}
-										playbackRate="2"
+										style={project.img_name == 'jan-6' || project.img_name == 'demo_thesis'
+											? 'transform: scale(2); top: 25%;'
+											: ''}
+										playbackRate="4"
 										autoplay
 										playsinline
 										loop
@@ -385,7 +387,7 @@
 		background-position-x: center;
 		background-position-y: center;
 		background-size: cover;
-		margin: 0 5px; /* Adjust margin for spacing between images */
+		margin: 0.15em;
 	}
 
 	.project-img video {
