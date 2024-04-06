@@ -1,5 +1,20 @@
 const projects = [
   {
+    "page_title": "How Trump Moved Money to Pay $100 Million in Legal Bills",
+    "project_url": "https://www.nytimes.com/interactive/2024/03/27/us/politics/trump-cases-legal-fund.html",
+    "img_url": "",
+    "img_name": "trump_legal",
+    "img_name_hover": "",
+    "media_type": "image",
+    "alt_text": "Flowchart illustrating the movement of funds within Trump-related entities, culminating in expenditure on legal expenses.",
+    "date": "",
+    "org": "The New York Times",
+    "desc_text": "Illustrating how Donald Trump transferred funds raised shortly after the 2020 election among various entities, ultimately to cover increasing legal expenses.",
+    "responsibilities": "Graphics & reporting",
+    "tools": "Ai2html & Illustrator",
+    "publish": "TRUE"
+  },
+  {
     "page_title": "Third Year Anniversary of the Jan. 6 Riot",
     "project_url": "https://www.nytimes.com/interactive/2024/01/04/us/january-6-capitol-trump-investigation.html",
     "img_url": "",
@@ -39,7 +54,7 @@ const projects = [
     "alt_text": "Small multiple line charts showing each republican candidate's fundraising ",
     "date": "",
     "org": "The New York Times",
-    "desc_text": "A tracker determining which candidates have met necessary qualifications for the republican primary debate.",
+    "desc_text": "A tracker showing which candidates have met necessary qualifications for the republican primary debate.",
     "responsibilities": "Data gathering, development & graphics",
     "tools": "Svelte, Layercake, ai2html, javascript, archieML",
     "publish": "TRUE"
