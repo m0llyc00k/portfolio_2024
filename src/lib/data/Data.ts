@@ -144,22 +144,6 @@ const projects = [
     "publish": "TRUE"
   },
   {
-    "page_title": "Where U.A.W. Strikes are Happening",
-    "project_url": "https://www.nytimes.com/interactive/2023/09/15/business/uaw-strike-map.html",
-    "img_url": "",
-    "img_name": "uaw-map",
-    "img_sketch": "",
-    "media_type": "image",
-    "alt_text": "A map with points representing where United Auto Workers are striking",
-    "date": "",
-    "org": "The New York Times",
-    "desc_text": "Mapping the locations where United Automobile Workers (U.A.W.) strikes are occurring.",
-    "responsibilities": "Data reporting",
-    "tools": "Svelte, d3.js",
-    "awards": "",
-    "publish": "TRUE"
-  },
-  {
     "page_title": "What It Means to Be a Texan Is Changing in Surprising Ways",
     "project_url": "https://www.nytimes.com/2023/11/13/us/texas-identity-population-politics-future.html",
     "img_url": "",
@@ -204,6 +188,22 @@ const projects = [
     "desc_text": "Constructing a timeline to determine how long citizens in Israel waited for IDF assistance by gathering and analyzing news reports, official statements, eyewitness accounts, and social media posts.",
     "responsibilities": "Reporting, data gathering, design & graphics development",
     "tools": "Illustrator, ai2html, Svelte, javascript",
+    "awards": "",
+    "publish": "TRUE"
+  },
+  {
+    "page_title": "Where U.A.W. Strikes are Happening",
+    "project_url": "https://www.nytimes.com/interactive/2023/09/15/business/uaw-strike-map.html",
+    "img_url": "",
+    "img_name": "uaw-map",
+    "img_sketch": "",
+    "media_type": "image",
+    "alt_text": "A map with points representing where United Auto Workers are striking",
+    "date": "",
+    "org": "The New York Times",
+    "desc_text": "Mapping the locations where United Automobile Workers (U.A.W.) strikes are occurring.",
+    "responsibilities": "Data reporting",
+    "tools": "Svelte, d3.js",
     "awards": "",
     "publish": "TRUE"
   },
