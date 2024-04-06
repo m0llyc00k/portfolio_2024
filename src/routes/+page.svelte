@@ -13,13 +13,9 @@
 
 	const path =
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/';
-	// 'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/305304fb2d7f58164d9c1af5ae652a5aa9e875f0/src/lib/assets/img/';
-	// 'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/401646e01a8e16de3614c5daa5fc8a80100ea2ff/src/lib/assets/img/';
+
 	const pathVideo =
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/305304fb2d7f58164d9c1af5ae652a5aa9e875f0/src/lib/assets/video/';
-
-	const sketch_path =
-		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/';
 </script>
 
 <svelte:head>
@@ -84,30 +80,43 @@
 			{#each updatedProjects as project}
 				<a href={project.project_url}>
 					<div class="card">
-						{#if project.media_type == 'video'}
-							<div class="parent-element-to-video project-img">
-								<video
-									playbackRate="2"
-									autoplay
-									playsinline
-									loop
-									muted
+						<div class="img-container">
+							<!-- Added a container for images -->
+							{#if project.media_type == 'video'}
+								<div class="parent-element-to-video project-img">
+									<video
+										style={project.img_name == 'jan-6' ? 'transform: scale(2); top: 25%;' : ''}
+										playbackRate="2"
+										autoplay
+										playsinline
+										loop
+										muted
+										alt={project.alt_text}
+										src="{pathVideo}{project.img_name}.mp4"
+									>
+										<!-- <source src="./assets/video/demo_thesis.mp4" type="video/mp4" />
+									Your browser does not support the video tag. -->
+									</video>
+								</div>
+							{:else}
+								<div
+									class="project-img"
+									role="button"
+									tabindex="0"
 									alt={project.alt_text}
-									src="{pathVideo}{project.img_name}.mp4"
-								>
-									<!-- <source src="./assets/video/demo_thesis.mp4" type="video/mp4" />
-								Your browser does not support the video tag. -->
-								</video>
-							</div>
-						{:else}
-							<div
-								class="project-img"
-								role="button"
-								tabindex="0"
-								alt={project.alt_text}
-								style={`background-image: url(' ${path}${project.img_name}.png'); background-size: cover;`}
-							/>
-						{/if}
+									style={`background-image: url(' ${path}${project.img_name}.png'); background-size: cover;`}
+								/>
+							{/if}
+							{#if project.img_sketch}
+								<div
+									class="project-img"
+									role="button"
+									tabindex="0"
+									alt={'Sketch of ' + project.alt_text}
+									style={`background-image: url(' ${path}${project.img_sketch}.png'); background-size: cover;`}
+								/>
+							{/if}
+						</div>
 						<div class="project-info">
 							<div style="margin-bottom:.75em;">
 								<h2 class="project-title">
@@ -124,6 +133,11 @@
 							<p class="project-desc">
 								<b>Tools: </b>{project.tools}
 							</p>
+							{#if project.awards}
+								<p class="project-desc">
+									<b>Awards and mentions: </b>{project.awards}
+								</p>
+							{/if}
 						</div>
 					</div>
 				</a>
@@ -145,7 +159,7 @@
 
 		display: flex;
 		flex-direction: column;
-		height: calc(100vh - 80px - 400px);
+		height: calc(95vh - 80px - 400px);
 		justify-content: center;
 		align-items: center;
 
@@ -156,7 +170,7 @@
 	.header h1 {
 		font-weight: 700;
 		margin: 0px 10px 0;
-		font-size: 2em;
+		font-size: 2.5em;
 		line-height: 1.2em;
 	}
 
@@ -266,23 +280,6 @@
 		overflow: hidden;
 		margin: 0 auto;
 	}
-	.project-img {
-		width: 100%;
-		height: 200px; /* Set a fixed height for the container */
-		border-top-left-radius: calc(0.25rem - 1px);
-		border-top-right-radius: calc(0.25rem - 1px);
-		overflow: hidden; /* Hide overflowing content */
-		background-position-x: center;
-		background-position-y: center;
-	}
-
-	.project-img video {
-		width: 100%;
-		height: auto; /* Allow the video to maintain its aspect ratio */
-		object-fit: cover; /* Cover the entire container */
-		object-position: center; /* Center the video horizontally and vertically */
-		transform: translate(0px, -20%);
-	}
 
 	.projects {
 		width: 100%;
@@ -359,7 +356,8 @@
 
 	@media (min-width: 1025px) {
 		.projectContainer .projects {
-			grid-template-columns: repeat(2, 1fr); /* 2 columns on screens wider than 600px */
+			grid-template-columns: repeat(2, 1fr);
+			/* 2 columns on screens wider than 600px */
 		}
 	}
 
@@ -373,5 +371,50 @@
 		display: flex;
 		flex-direction: column;
 		height: 100%; /* Ensures all card elements take up the same height */
+	}
+	.img-container {
+		display: flex; /* Added flex display to contain images */
+	}
+
+	.project-img {
+		flex: 1; /* Make images share the container space */
+		height: 250px; /* Set a fixed height for the container */
+		border-top-left-radius: calc(0.25rem - 1px);
+		border-top-right-radius: calc(0.25rem - 1px);
+		overflow: hidden; /* Hide overflowing content */
+		background-position-x: center;
+		background-position-y: center;
+		background-size: cover;
+		margin: 0 5px; /* Adjust margin for spacing between images */
+	}
+
+	.project-img video {
+		width: 100%;
+		height: auto; /* Allow the video to maintain its aspect ratio */
+		object-fit: cover; /* Cover the entire container */
+		object-position: center; /* Center the video horizontally */
+		position: relative; /* Add position relative */
+	}
+	@media (max-width: 600px) {
+		.project-img {
+			height: 100%;
+			min-height: 175px;
+		}
+	}
+
+	.projects {
+		width: 100%;
+		margin: 50px auto;
+		display: grid;
+		grid-gap: 30px;
+		grid-template-columns: 1fr;
+		margin-bottom: 10px;
+	}
+
+	@media (min-width: 1025px) {
+		.projectContainer .projects {
+			grid-template-columns: repeat(2, 1fr);
+			/* 2 columns on screens wider than 1025px */
+		}
 	}
 </style>

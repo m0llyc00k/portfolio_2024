@@ -8,8 +8,8 @@ const routes = [
 		label: 'Projects'
 	}
 	// {
-	// 	href: '/about',
-	// 	label: 'About'
+	// 	href: '/thesis',
+	// 	label: 'Thesis'
 	// }
 	// {
 	// 	href: '/blog',

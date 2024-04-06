@@ -1,5 +1,5 @@
 <div class="container">
-	<h1>404</h1>
+	<h1>Oops! Something is wrong with this page.</h1>
 </div>
 
 <style>

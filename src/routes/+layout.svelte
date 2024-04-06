@@ -1,17 +1,19 @@
 <script lang="ts">
 	// import Navbar from '$lib/components/NavBar.svelte';
-	import Button from '$lib/components/Button.svelte';
-	import FaCopy from 'svelte-icons/fa/FaCopy.svelte';
+	// import Button from '$lib/components/Button.svelte';
+	// import FaCopy from 'svelte-icons/fa/FaCopy.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
 	// import { beforeNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
 	import Modal from '$lib/components/Modal.svelte';
 	import { onMount } from 'svelte';
 	import { customBackground } from '$lib/store';
-	import { Email } from '$lib/Constants';
+	// import { Email } from '$lib/Constants.ts';
 	// import routes from '$lib/NavRoutes';
 
 	let copied = false;
+
+	let Email = 'mollyc628@gmail.com';
 
 	interface CssVariables {
 		[name: string]: string;
@@ -70,14 +72,14 @@
 							}, 500);
 						}}
 					>
-						<div>
+						<!-- <div>
 							<FaCopy />
-						</div>
+						</div> -->
 					</div>
 				</Tooltip>
 			</div>
 		</div>
-		<Button>Send Email</Button>
+		<!-- <Button>Send Email</Button> -->
 	</div>
 </Modal>
 <!-- <Navbar segment={$page.url.pathname} /> -->
@@ -100,7 +102,7 @@
 	:global(#svelte) {
 		width: 100vw;
 		height: 100%;
-		max-width: 1020px;
+		/* max-width: 1020px; */
 
 		display: flex;
 		flex-direction: column;
