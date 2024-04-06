@@ -2,8 +2,8 @@ const projects = [
   {
     "page_title": "How Trump Moved Money to Pay $100 Million in Legal Bills",
     "project_url": "https://www.nytimes.com/interactive/2024/03/27/us/politics/trump-cases-legal-fund.html",
-    "img_url": "https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/401646e01a8e16de3614c5daa5fc8a80100ea2ff/src/lib/assets/img/trump_legal.png",
-    "img_name": "trump_legal",
+    "img_url": "",
+    "img_name": "trump-legal",
     "media_type": "image",
     "alt_text": "Flowchart illustrating the movement of funds within Trump-related entities, culminating in expenditure on legal expenses.",
     "date": "",
