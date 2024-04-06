@@ -12,8 +12,8 @@
 	let updatedProjects = projects.filter((d) => d.publish == 'TRUE');
 
 	const path =
-		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/305304fb2d7f58164d9c1af5ae652a5aa9e875f0/src/lib/assets/img/';
-
+		// 'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/305304fb2d7f58164d9c1af5ae652a5aa9e875f0/src/lib/assets/img/';
+		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/401646e01a8e16de3614c5daa5fc8a80100ea2ff/src/lib/assets/img/';
 	const pathVideo =
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/305304fb2d7f58164d9c1af5ae652a5aa9e875f0/src/lib/assets/video/';
 
@@ -104,7 +104,7 @@
 								role="button"
 								tabindex="0"
 								alt={project.alt_text}
-								style={`background-image: url('${path}${project.img_name}.png'); background-size: cover;`}
+								style={`background-image: url(' ${path}${project.img_name}.png'); background-size: cover;`}
 							/>
 						{/if}
 						<div class="project-info">
