@@ -3,14 +3,20 @@
 		"sheet": [
 			{
 				"id": "1gERVE-pfpCrKwBMLMY09bLsa5Gp25OIejUINUhhpdwU",
+				"gid": "1779751244",
+				"filepath": "src/lib/data/polls.csv"
+			},
+			{
+				"id": "1gERVE-pfpCrKwBMLMY09bLsa5Gp25OIejUINUhhpdwU",
 				"gid": "0",
-				"filepath": "src/lib/Data.ts"
+				"filepath": "src/lib/data/Data.ts"
 			},
 			{
 				"id": "1gERVE-pfpCrKwBMLMY09bLsa5Gp25OIejUINUhhpdwU",
 				"gid": "0",
 				"filepath": "src/lib/data/data.csv"
 			}
+			
 		],
 		"doc": [
 			{

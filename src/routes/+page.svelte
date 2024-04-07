@@ -87,7 +87,6 @@
 				<a href={project.project_url}>
 					<div class="card">
 						<div class="img-container">
-							<!-- Added a container for images -->
 							{#if project.media_type == 'video'}
 								<div class="parent-element-to-video project-img">
 									<video
@@ -99,8 +98,6 @@
 										alt={project.alt_text}
 										src="{pathVideo}{project.img_name}.mp4"
 									>
-										<!-- <source src="./assets/video/demo_thesis.mp4" type="video/mp4" />
-									Your browser does not support the video tag. -->
 									</video>
 								</div>
 							{:else}
@@ -194,7 +191,7 @@
 		gap: 15px;
 	}
 	.header-wrap {
-		overflow: hidden;
+		/* overflow: hidden; */
 		position: relative;
 	}
 
