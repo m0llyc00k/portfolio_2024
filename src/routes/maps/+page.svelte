@@ -7,27 +7,31 @@
 	// 		src: `https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/${img.url}`
 	// 	}));
 	// })();
-
+	let imagesNew = [];
+	let mounted = false;
 	onMount(() => {
+		mounted = true;
 		// Save the current URL in local storage when the component mounts
 		localStorage.setItem('previousPage', window.location.href);
+		imagesNew = images.map((img) => ({
+			src: `https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/${img.url}`
+		}));
 	});
-	let imagesNew = images.map((img) => ({
-		src: `https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/${img.url}`
-	}));
 </script>
 
 <!-- {#await load}
 	... loading
 {:then images} -->
-<div class="projectContainer">
-	<h1 class="title">A collection of maps made in QGIS</h1>
-	{#each imagesNew as image, index}
-		<!-- <Gallery {images}> -->
-		<img class="img" src={image.src} alt="" />
-		<!-- </Gallery> -->
-	{/each}
-</div>
+{#if mounted}
+	<div class="projectContainer">
+		<h1 class="title">A collection of maps made in QGIS</h1>
+		{#each imagesNew as image, index}
+			<!-- <Gallery {images}> -->
+			<img class="img" src={image.src} alt="" />
+			<!-- </Gallery> -->
+		{/each}
+	</div>
+{/if}
 <button
 	style="width: 100px; margin: 0 auto; margin-top: 1em; color: #767676;"
 	on:click={() => (window.location.href = '/')}>Back to Main</button

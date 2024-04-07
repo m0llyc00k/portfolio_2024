@@ -5,8 +5,6 @@
 
 	const path =
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/';
-
-	$: console.log(polls);
 </script>
 
 <PageTemplate title="NYT/ Siena Polls">

@@ -97,8 +97,7 @@
 										muted
 										alt={project.alt_text}
 										src="{pathVideo}{project.img_name}.mp4"
-									>
-									</video>
+									/>
 								</div>
 							{:else}
 								<div
