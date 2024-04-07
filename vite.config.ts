@@ -1,13 +1,6 @@
-import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import { sveltekit } from '@sveltejs/kit/vite'; // Import sveltekit from @sveltejs/kit/vite
 
 export default defineConfig({
-	resolve: {
-		// Add a custom resolver for .node files
-		extensions: ['.mjs', '.js', '.json', '.node', '.ts']
-	},
-	optimizeDeps: {
-		exclude: ['fsevents']
-	  },
-	plugins: [sveltekit()]
+  plugins: [sveltekit()] // Use sveltekit as a plugin
 });

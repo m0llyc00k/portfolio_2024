@@ -91,12 +91,7 @@
 							{#if project.media_type == 'video'}
 								<div class="parent-element-to-video project-img">
 									<video
-										style={project.img_sketch
-											? 'transform: scale(2); top: 25%;'
-											: project.img_name == 'jan-6'
-												? 'opacity: 0.4; transform: scale(2); top: 25%;'
-												: ''}
-										playbackRate="4"
+										style={project.img_sketch ? 'transform: scale(1.75); top: 20%;' : ''}
 										autoplay
 										playsinline
 										loop
@@ -123,7 +118,9 @@
 									role="button"
 									tabindex="0"
 									alt={'Sketch of ' + project.alt_text}
-									style={`background-image: url(' ${path}${project.img_sketch}.png'); background-size: cover;`}
+									style={project.img_name === 'jan-6'
+										? `background-image: url('${path}${project.img_sketch}.png'); background-size: cover; opacity: 0.6;  `
+										: `background-image: url('${path}${project.img_sketch}.png'); background-size: cover;`}
 								/>
 							{/if}
 						</div>
