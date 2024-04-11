@@ -15,7 +15,7 @@
 
 {#if mounted}
 	<PageTemplate title="NYT/ Siena Polls">
-		<div slot="col-1">
+		<div slot="col-1" class="col-1">
 			{#each polls as img}
 				<img class="img" src="{path}{img.img_name}.png" alt={img.alt_text} />
 			{/each}
@@ -47,7 +47,7 @@
 	.img {
 		width: 100%;
 		height: auto;
-		margin-bottom: 1em;
+		margin-bottom: 2em;
 		border: 3px solid white;
 	}
 	.text {
@@ -72,5 +72,9 @@
 	}
 	.link:hover {
 		text-decoration: underline;
+	}
+	.col-1 {
+		max-width: 75%;
+		margin: 0 auto;
 	}
 </style>

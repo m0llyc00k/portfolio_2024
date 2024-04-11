@@ -5,6 +5,7 @@
 	import FaMedium from 'svelte-icons/fa/FaMedium.svelte';
 	import { modalOpened } from '$lib/store';
 	import Wave from '$lib/assets/wave.svg';
+	import { onMount } from 'svelte';
 
 	// import projects from '$lib/Projects';
 	import projects from '$lib/data/Data.ts';
@@ -15,7 +16,10 @@
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/';
 
 	const pathVideo =
-		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/305304fb2d7f58164d9c1af5ae652a5aa9e875f0/src/lib/assets/video/';
+		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/video/';
+
+	let playbackRate = 1;
+	let playbackRateFaster = 2;
 </script>
 
 <svelte:head>
@@ -95,8 +99,9 @@
 										playsinline
 										loop
 										muted
-										alt={project.alt_text}
 										src="{pathVideo}{project.img_name}.mp4"
+										id={project.img_name}
+										bind:playbackRate
 									/>
 								</div>
 							{:else}
@@ -120,6 +125,7 @@
 								/>
 							{/if}
 						</div>
+
 						<div class="project-info">
 							<div style="margin-bottom:.75em;">
 								<h2 class="project-title">
