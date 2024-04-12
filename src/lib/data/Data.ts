@@ -85,8 +85,8 @@ const data = [
     "publish": "TRUE"
   },
   {
-    "page_title": "Live Debate Tracker",
-    "project_url": "https://www.nytimes.com/interactive/2023/08/23/us/politics/republican-debate-live-tracker.html",
+    "page_title": "Live Debate Trackers",
+    "project_url": "/debates",
     "img_url": "",
     "img_name": "debate-clip",
     "img_sketch": "",
