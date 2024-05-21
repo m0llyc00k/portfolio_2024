@@ -17,23 +17,6 @@ const data = [
     "publish": "TRUE"
   },
   {
-    "page_title": "Trump Jury Illustrations",
-    "project_url": "https://www.nytimes.com/2024/04/18/nyregion/trump-trial-jury-hush-money.html",
-    "img_url": "",
-    "img_name": "jurors",
-    "img_sketch": "",
-    "media_type": "image",
-    "playback_rate": "",
-    "alt_text": "",
-    "date": "",
-    "org": "The New York Times",
-    "desc_text": "A series of illustrations showing the demographics of the jury in Trump's hush-money trial.",
-    "responsibilities": "Graphics",
-    "tools": "Drawing tablet",
-    "awards": "",
-    "publish": "TRUE"
-  },
-  {
     "page_title": "How Trump Moved Money to Pay $100 Million in Legal Bills",
     "project_url": "https://www.nytimes.com/interactive/2024/03/27/us/politics/trump-cases-legal-fund.html",
     "img_url": "",
@@ -47,6 +30,23 @@ const data = [
     "desc_text": "Illustrating how Donald Trump moved money raised shortly after the 2020 election to cover mounting legal expenses.",
     "responsibilities": "Reporting & graphics",
     "tools": "Ai2html & Illustrator",
+    "awards": "",
+    "publish": "TRUE"
+  },
+  {
+    "page_title": "Trump Jury Illustrations",
+    "project_url": "https://www.nytimes.com/2024/04/18/nyregion/trump-trial-jury-hush-money.html",
+    "img_url": "",
+    "img_name": "jurors",
+    "img_sketch": "",
+    "media_type": "image",
+    "playback_rate": "",
+    "alt_text": "",
+    "date": "",
+    "org": "The New York Times",
+    "desc_text": "A series of illustrations showing the demographics of the jury in Trump's hush-money trial.",
+    "responsibilities": "Graphics",
+    "tools": "Drawing tablet",
     "awards": "",
     "publish": "TRUE"
   },
