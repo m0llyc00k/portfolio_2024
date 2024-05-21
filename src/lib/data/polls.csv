@@ -1,8 +1,10 @@
 title,url,img_name,alt_text
-What’s Behind Kennedy’s Poll Numbers?,https://www.nytimes.com/2023/11/07/us/politics/rfk-jr-trump-biden-poll.html,rfk_jr,A bar chart showing voters preferences for Robert F. Kennedy Jr. in a race between Biden and Trump.
-"Trump Indictments Haven’t Sunk His Campaign, but a Conviction Might",https://www.nytimes.com/2023/11/06/us/politics/trump-biden-times-siena-poll.html,trump_biden_polls,A table representing NYT/ Siena poll outcomes
-Trump Leads in 5 Critical States as Voters Blast Biden,https://www.nytimes.com/2023/11/05/us/politics/biden-trump-2024-poll.html,horserace_nov,Bar charts showing each candidates lead in key states.
-Voters Doubt Biden’s Leadership and Favor Trump,https://www.nytimes.com/2024/03/02/us/politics/biden-trump-times-siena-poll.html,horserace_mar,Bar charts showing Trump's lead over Biden in a two-way race.
-Majority of Biden’s 2020 Voters Now Say He’s Too Old to Be Effective,https://www.nytimes.com/2024/03/03/us/politics/biden-age-trump-poll.html,age,Stacked bar charts showing voters' views on each candidate's age.
-,,kennedy_2,"A bar chart showing the breakdown of voters who said they would vote for Kennedy, if they had to choose Trump or Biden."
+"Trump Leads in 5 Key States, as Young and Nonwhite Voters Express Discontent With Biden",https://www.nytimes.com/2024/05/13/us/politics/biden-trump-battleground-poll.html,h2h_margin,"Dot plots showing the lead of each candidate, Biden and Trump, and the margin of error for their averages."
+Democrats Hold Leads in 4 Crucial Races That Could Decide Senate Control,https://www.nytimes.com/2024/05/13/us/politics/democrats-senate-battleground-poll.html,h2h_swing,Horizontal stacked bar charts showing poll results in each battleground state.
+"R.F.K. Jr. Is 2024’s X Factor, New Polls Show, Fueled by Young Voters and Social Media",https://www.nytimes.com/2024/05/14/us/politics/kennedy-battleground-poll.html,rfk_jr,A bar chart showing voters preferences for Robert F. Kennedy Jr. in a race between Biden and Trump.
+What’s Behind Kennedy’s Poll Numbers?,https://www.nytimes.com/2023/11/07/us/politics/rfk-jr-trump-biden-poll.html,trump_biden_polls,A table representing NYT/ Siena poll outcomes
+"Trump Indictments Haven’t Sunk His Campaign, but a Conviction Might",https://www.nytimes.com/2023/11/06/us/politics/trump-biden-times-siena-poll.html,horserace_nov,Bar charts showing each candidates lead in key states.
+Trump Leads in 5 Critical States as Voters Blast Biden,https://www.nytimes.com/2023/11/05/us/politics/biden-trump-2024-poll.html,horserace_mar,Bar charts showing Trump's lead over Biden in a two-way race.
+Voters Doubt Biden’s Leadership and Favor Trump,https://www.nytimes.com/2024/03/02/us/politics/biden-trump-times-siena-poll.html,age,Stacked bar charts showing voters' views on each candidate's age.
+Majority of Biden’s 2020 Voters Now Say He’s Too Old to Be Effective,https://www.nytimes.com/2024/03/03/us/politics/biden-age-trump-poll.html,kennedy_2,"A bar chart showing the breakdown of voters who said they would vote for Kennedy, if they had to choose Trump or Biden."
 ,,biden_against,A table showing how Biden would fare against other republican candidates.

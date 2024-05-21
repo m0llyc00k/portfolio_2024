@@ -6,14 +6,37 @@
 
 	const path =
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/';
-
 	let mounted = false;
+	let imagesLoaded = false;
+
 	onMount(() => {
-		mounted = true;
+		setTimeout(() => {
+			// Check if all images are complete after waiting
+			const imgElements = document.querySelectorAll('.img');
+			let allLoaded = true;
+			imgElements.forEach((img) => {
+				if (!img.complete) {
+					allLoaded = false;
+				}
+			});
+			if (allLoaded) {
+				imagesLoaded = true;
+			} else {
+				// If not all images are loaded, set a fallback mechanism
+				imgElements.forEach((img) => {
+					img.onload = () => {
+						const allNowLoaded = Array.from(imgElements).every((img) => img.complete);
+						if (allNowLoaded) {
+							imagesLoaded = true;
+						}
+					};
+				});
+			}
+		}, 1000); // Wait for 1 second before checking
 	});
 </script>
 
-{#if mounted}
+{#if imagesLoaded}
 	<PageTemplate title="NYT/ Siena Polls">
 		<div slot="col-1" class="col-1">
 			{#each polls as img}
@@ -23,11 +46,12 @@
 
 		<div slot="col-2">
 			<p class="text">
-				A curated assortment of visuals derived from the NYT/Siena poll releases. Collaborating
-				closely with politics reporters, I delved into the nuances of each poll's findings to craft
-				compelling narratives and translate them into engaging graphics. Many of these
-				visualizations were meticulously crafted within a tight timeframe of just a day or two upon
-				receiving the polls, while some required adjustments to accommodate evolving data dynamics.
+				A curated assortment of visuals from the NYT/Siena poll releases. Collaborating closely with
+				politics reporters and election analytics teams, I delved into the nuances of each poll's
+				findings to craft compelling narratives and translate them into engaging graphics. Many of
+				these visualizations were meticulously crafted within a tight timeframe of just a day or two
+				upon receiving the polls, while some required continued adjustments to accommodate evolving
+				data dynamics.
 			</p>
 			<h2>Links to stories</h2>
 			<ul class="list">
@@ -41,6 +65,8 @@
 			</ul>
 		</div>
 	</PageTemplate>
+{:else}
+	<p>Loading images...</p>
 {/if}
 
 <style>
@@ -64,11 +90,7 @@
 	}
 
 	.link {
-		/* color: #357a8e; */
-		/* border: 1px solid #357a8e;
-		border-radius: 2px; */
 		padding: 1px;
-		/* text-decoration: underline; */
 	}
 	.link:hover {
 		text-decoration: underline;

@@ -1,5 +1,39 @@
 const data = [
   {
+    "page_title": "The Links Between Trump and 3 Hush-Money Deals",
+    "project_url": "https://www.nytimes.com/interactive/2024/04/25/nyregion/trump-trial-hush-money-payments.html?searchResultPosition=1",
+    "img_url": "",
+    "img_name": "trump-trial-links",
+    "img_sketch": "",
+    "media_type": "image",
+    "playback_rate": "",
+    "alt_text": "",
+    "date": "",
+    "org": "The New York Times",
+    "desc_text": "Here’s how key figures involved in making hush-money payoffs on behalf of Donald J. Trump are connected.",
+    "responsibilities": "Reporting & graphics",
+    "tools": "Ai2html & Illustrator",
+    "awards": "",
+    "publish": "TRUE"
+  },
+  {
+    "page_title": "Trump Jury Illustrations",
+    "project_url": "https://www.nytimes.com/2024/04/18/nyregion/trump-trial-jury-hush-money.html",
+    "img_url": "",
+    "img_name": "jurors",
+    "img_sketch": "",
+    "media_type": "image",
+    "playback_rate": "",
+    "alt_text": "",
+    "date": "",
+    "org": "The New York Times",
+    "desc_text": "A series of illustrations showing the demographics of the jury in Trump's hush-money trial.",
+    "responsibilities": "Graphics",
+    "tools": "Drawing tablet",
+    "awards": "",
+    "publish": "TRUE"
+  },
+  {
     "page_title": "How Trump Moved Money to Pay $100 Million in Legal Bills",
     "project_url": "https://www.nytimes.com/interactive/2024/03/27/us/politics/trump-cases-legal-fund.html",
     "img_url": "",
@@ -200,7 +234,7 @@ const data = [
     "desc_text": "Constructing a timeline to determine how long citizens in Israel waited for IDF assistance by gathering and analyzing news reports, official statements, eyewitness accounts, and social media posts.",
     "responsibilities": "Reporting, data gathering, design & graphics development",
     "tools": "Illustrator, ai2html, Svelte, javascript",
-    "awards": "",
+    "awards": "Award of Excellence, Society for News Design",
     "publish": "TRUE"
   },
   {
