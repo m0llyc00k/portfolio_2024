@@ -80,6 +80,7 @@
 										classes="img-load project-img"
 										loading="lazy"
 										src="{path}{project.img_name}.png"
+										alt={project.alt_text}
 									/>
 								</div>
 							{/if}
