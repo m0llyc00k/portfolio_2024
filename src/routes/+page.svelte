@@ -7,11 +7,9 @@
 	import { onMount } from 'svelte';
 	import { Image } from 'svelte-lazy-loader';
 	import './global.css'; // Import your global styles
-	import imageURL from '$lib/assets/images/texas.png';
 
 	let updatedProjects = projects.filter((d) => d.publish === 'TRUE');
 
-	const path = '"/_assets/img/';
 	const pathVideo =
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/video/';
 
