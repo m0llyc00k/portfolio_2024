@@ -148,7 +148,7 @@
 
 	:global(::selection) {
 		color: white;
-		background: #ca3c25;
+		background: #999999;
 	}
 
 	/* :global(::-webkit-scrollbar) {
@@ -246,13 +246,13 @@
 		text-decoration: none;
 		color: #4158d0;
 	}
-	footer .svelte {
+	/* footer .svelte {
 		color: #ff3e00;
 	}
 
 	footer .me {
 		color: #ff3e00;
-	}
+	} */
 
 	@media (min-width: 900px) {
 		:global(.tooltip) {
