@@ -89,6 +89,8 @@
 <footer />
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+
 	* {
 		box-sizing: border-box;
 	}
@@ -97,6 +99,12 @@
 		font-family: 'Rubik', sans-serif;
 		font-display: optional;
 		src: url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+	}
+
+	@font-face {
+		font-family: 'Golos Text', sans-serif;
+		font-style: normal;
+		src: url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
 	}
 
 	:global(#svelte) {
@@ -116,8 +124,9 @@
 		width: 100%;
 		height: 100%;
 		/* overflow: auto; */
-		font-family: 'Rubik', sans-serif;
+		font-family: 'Golos Text', sans-serif;
 		background-color: #eeeeee;
+		box-sizing: border-box; /* Ensure padding is included in width calculations */
 	}
 
 	:global(body) {
