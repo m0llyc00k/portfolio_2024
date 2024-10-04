@@ -51,7 +51,8 @@
 	<div class="header-wrap header">
 		<h1>Molly Cook Escobar</h1>
 		<div class="intro">
-			<span>Data and graphics journalist committed to thoughtful storytelling.</span>
+			<p>Data and graphics journalist.</p>
+			<p>Committed to thoughtful storytelling.</p>
 		</div>
 		<div class="icons">
 			<div role="button" tabindex="0" on:click={() => modalOpened.set(true)}>
@@ -142,7 +143,9 @@
 	*::after {
 		box-sizing: inherit; /* Inherit box-sizing */
 	}
-
+	.intro p {
+		margin: 0;
+	}
 	.project-desc-resp {
 		color: #999;
 		font-size: 0.85rem;
@@ -161,7 +164,7 @@
 
 	.header-wrap {
 		max-width: 1200px; /* Align with body content */
-		padding: 0 20px; /* Add padding */
+		padding: 40px 20px 0px 20px;
 		margin: 0 auto; /* Center the header */
 	}
 
@@ -189,7 +192,6 @@
 		font-weight: 300;
 		font-size: 1.1em;
 		padding-top: 1em;
-		max-width: 350px;
 	}
 
 	.icons {
@@ -209,16 +211,12 @@
 		color: #767676;
 	}
 
-	.projectContainer {
-		padding-top: 1em;
-	}
-
 	.projects {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust automatically */
 		gap: 30px;
 		width: 100%;
-		margin: 50px 0; /* Margin for spacing */
+		margin: 40px 0; /* Margin for spacing */
 	}
 
 	.card {
