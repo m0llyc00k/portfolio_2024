@@ -152,7 +152,7 @@
 	}
 	.org {
 		font-style: italic;
-		color: #767676
+		color: #767676;
 		margin: 0;
 	}
 	.project-title {
