@@ -15,6 +15,7 @@
 
 	let playbackRate = 1;
 	let imagesLoaded = false;
+	let loaded;
 	onMount(() => {
 		setTimeout(() => {
 			// Check if all images are complete after waiting
@@ -100,7 +101,7 @@
 										<Image
 											classes="img-load project-img"
 											loading="lazy"
-											src={`src/routes/${project.img_name}.png`}
+											src="/images/{project.img_name}.png"
 											alt={project.alt_text}
 										/>
 									</div>
