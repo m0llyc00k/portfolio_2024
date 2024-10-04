@@ -7,17 +7,16 @@
 	import { onMount } from 'svelte';
 	import { Image } from 'svelte-lazy-loader';
 	import './global.css'; // Import your global styles
+	import imageURL from '$lib/assets/images/texas.png';
 
 	let updatedProjects = projects.filter((d) => d.publish === 'TRUE');
 
-	const path =
-		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/';
+	const path = '"/_assets/img/';
 	const pathVideo =
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/video/';
 
 	let playbackRate = 1;
 	let imagesLoaded = false;
-	let loaded;
 	onMount(() => {
 		setTimeout(() => {
 			// Check if all images are complete after waiting
@@ -96,7 +95,6 @@
 											src="{pathVideo}{project.img_name}.mp4"
 											id={project.img_name}
 											bind:playbackRate
-											class:loaded
 										/>
 									</div>
 								{:else}
@@ -104,7 +102,7 @@
 										<Image
 											classes="img-load project-img"
 											loading="lazy"
-											src="{path}{project.img_name}.png"
+											src={`src/routes/${project.img_name}.png`}
 											alt={project.alt_text}
 										/>
 									</div>
