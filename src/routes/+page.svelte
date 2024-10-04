@@ -16,8 +16,33 @@
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/video/';
 
 	let playbackRate = 1;
-
-	let loaded = false;
+	let imagesLoaded = false;
+	let loaded;
+	onMount(() => {
+		setTimeout(() => {
+			// Check if all images are complete after waiting
+			const imgElements = document.querySelectorAll('.project-img');
+			let allLoaded = true;
+			imgElements.forEach((img) => {
+				if (!img.complete) {
+					allLoaded = false;
+				}
+			});
+			if (allLoaded) {
+				imagesLoaded = true;
+			} else {
+				// If not all images are loaded, set a fallback mechanism
+				imgElements.forEach((img) => {
+					img.onload = () => {
+						const allNowLoaded = Array.from(imgElements).every((img) => img.complete);
+						if (allNowLoaded) {
+							imagesLoaded = true;
+						}
+					};
+				});
+			}
+		}, 1000); // Wait for 1 second before checking
+	});
 </script>
 
 <svelte:head>
@@ -53,38 +78,38 @@
 		</div>
 	</div>
 </section>
-
-<section>
-	<div class="projectContainer">
-		<div class="projects">
-			{#each updatedProjects as project}
-				<a href={project.project_url}>
-					<div class="card">
-						<div class="img-container">
-							{#if project.media_type === 'video'}
-								<div class="parent-element-to-video project-img">
-									<video
-										autoplay
-										playsinline
-										loop
-										muted
-										src="{pathVideo}{project.img_name}.mp4"
-										id={project.img_name}
-										bind:playbackRate
-										class:loaded
-									/>
-								</div>
-							{:else}
-								<div class="project-img">
-									<Image
-										classes="img-load project-img"
-										loading="lazy"
-										src="{path}{project.img_name}.png"
-										alt={project.alt_text}
-									/>
-								</div>
-							{/if}
-							<!-- {#if project.img_sketch}
+{#if imagesLoaded}
+	<section>
+		<div class="projectContainer">
+			<div class="projects">
+				{#each updatedProjects as project}
+					<a href={project.project_url}>
+						<div class="card">
+							<div class="img-container">
+								{#if project.media_type === 'video'}
+									<div class="parent-element-to-video project-img">
+										<video
+											autoplay
+											playsinline
+											loop
+											muted
+											src="{pathVideo}{project.img_name}.mp4"
+											id={project.img_name}
+											bind:playbackRate
+											class:loaded
+										/>
+									</div>
+								{:else}
+									<div class="project-img">
+										<Image
+											classes="img-load project-img"
+											loading="lazy"
+											src="{path}{project.img_name}.png"
+											alt={project.alt_text}
+										/>
+									</div>
+								{/if}
+								<!-- {#if project.img_sketch}
 								<div
 									class="project-img"
 									role="button"
@@ -92,24 +117,27 @@
 									style={`background-image: url('${path}${project.img_sketch}.png'); opacity: 0.6;`}
 								/>
 							{/if} -->
-						</div>
-						<div class="project-info">
-							<h2 class="project-title">{project.page_title}</h2>
-							<p class="project-desc">{project.desc_text}</p>
-							<p class="project-desc-resp">{project.responsibilities}</p>
-							<p class="project-desc org">{project.org}</p>
+							</div>
+							<div class="project-info">
+								<h2 class="project-title">{project.page_title}</h2>
+								<p class="project-desc">{project.desc_text}</p>
+								<p class="project-desc-resp">{project.responsibilities}</p>
+								<p class="project-desc org">{project.org}</p>
 
-							<!-- <p class="project-desc"><b>Tools: </b>{project.tools}</p> -->
-							{#if project.awards}
-								<p class="project-desc"><b>Awards and mentions: </b>{project.awards}</p>
-							{/if}
+								<!-- <p class="project-desc"><b>Tools: </b>{project.tools}</p> -->
+								{#if project.awards}
+									<p class="project-desc"><b>Awards and mentions: </b>{project.awards}</p>
+								{/if}
+							</div>
 						</div>
-					</div>
-				</a>
-			{/each}
+					</a>
+				{/each}
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+{:else}
+	<h2 style="margin: 0 auto;">Loading images...</h2>
+{/if}
 
 <style>
 	*,
