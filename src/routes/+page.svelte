@@ -23,6 +23,40 @@
 			loaded = true;
 		};
 	});
+
+	let observer;
+
+	function lazyLoadMedia() {
+		const mediaElements = document.querySelectorAll('.lazy-load');
+
+		if (!observer) {
+			observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						const mediaElement = entry.target;
+
+						if (mediaElement.tagName === 'VIDEO') {
+							mediaElement.src = mediaElement.dataset.src; // Set the video source
+							mediaElement.load(); // Load the video
+							mediaElement.play(); // Start playback
+						} else {
+							mediaElement.style.backgroundImage = `url('${mediaElement.dataset.img}')`;
+						}
+
+						observer.unobserve(mediaElement); // Stop observing
+					}
+				});
+			});
+		}
+
+		mediaElements.forEach((mediaElement) => {
+			observer.observe(mediaElement);
+		});
+	}
+
+	onMount(() => {
+		lazyLoadMedia();
+	});
 </script>
 
 <svelte:head>
@@ -78,6 +112,7 @@
 										bind:playbackRate
 										class:loaded
 										bind:this={thisImage}
+										loading="lazy"
 									/>
 								</div>
 							{:else}
@@ -156,7 +191,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
-		height: calc(95vh - 100px - 400px);
+		/* height: calc(95vh - 100px - 400px); */
 		/* border-bottom: solid 2px #f4f4f4; */
 	}
 
