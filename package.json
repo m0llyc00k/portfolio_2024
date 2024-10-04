@@ -39,6 +39,7 @@
 		"csv-parser": "^3.0.0",
 		"html-entities": "^2.4.0",
 		"htmlparser2": "^9.0.0",
-		"node-fetch": "^3.3.2"
+		"node-fetch": "^3.3.2",
+		"svelte-lazy-loader": "^1.0.0"
 	}
 }

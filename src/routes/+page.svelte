@@ -5,6 +5,8 @@
 	import { modalOpened } from '$lib/store';
 	import projects from '$lib/data/Data.ts';
 	import { onMount } from 'svelte';
+	import { Image } from 'svelte-lazy-loader';
+	import './global.css'; // Import your global styles
 
 	let updatedProjects = projects.filter((d) => d.publish === 'TRUE');
 
@@ -16,47 +18,6 @@
 	let playbackRate = 1;
 
 	let loaded = false;
-	let thisImage;
-
-	onMount(() => {
-		thisImage.onload = () => {
-			loaded = true;
-		};
-	});
-
-	let observer;
-
-	function lazyLoadMedia() {
-		const mediaElements = document.querySelectorAll('.lazy-load');
-
-		if (!observer) {
-			observer = new IntersectionObserver((entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						const mediaElement = entry.target;
-
-						if (mediaElement.tagName === 'VIDEO') {
-							mediaElement.src = mediaElement.dataset.src; // Set the video source
-							mediaElement.load(); // Load the video
-							mediaElement.play(); // Start playback
-						} else {
-							mediaElement.style.backgroundImage = `url('${mediaElement.dataset.img}')`;
-						}
-
-						observer.unobserve(mediaElement); // Stop observing
-					}
-				});
-			});
-		}
-
-		mediaElements.forEach((mediaElement) => {
-			observer.observe(mediaElement);
-		});
-	}
-
-	onMount(() => {
-		lazyLoadMedia();
-	});
 </script>
 
 <svelte:head>
@@ -111,19 +72,16 @@
 										id={project.img_name}
 										bind:playbackRate
 										class:loaded
-										bind:this={thisImage}
-										loading="lazy"
 									/>
 								</div>
 							{:else}
-								<div
-									class="project-img"
-									role="button"
-									tabindex="0"
-									class:loaded
-									bind:this={thisImage}
-									style={`background-image: url('${path}${project.img_name}.png');`}
-								/>
+								<div class="project-img">
+									<Image
+										classes="img-load project-img"
+										loading="lazy"
+										src="{path}{project.img_name}.png"
+									/>
+								</div>
 							{/if}
 							<!-- {#if project.img_sketch}
 								<div
@@ -158,6 +116,7 @@
 	*::after {
 		box-sizing: inherit; /* Inherit box-sizing */
 	}
+
 	.project-desc-resp {
 		color: #999;
 		font-size: 0.85rem;
@@ -191,7 +150,6 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
-		/* height: calc(95vh - 100px - 400px); */
 		/* border-bottom: solid 2px #f4f4f4; */
 	}
 

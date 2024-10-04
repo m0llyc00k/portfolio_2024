@@ -1,0 +1,5 @@
+/* src/global.css */
+
+.img-load {
+	object-fit: cover !important;
+}
