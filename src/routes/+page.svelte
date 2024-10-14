@@ -6,40 +6,31 @@
 	import projects from '$lib/data/Data.ts';
 	import { onMount } from 'svelte';
 	import { Image } from 'svelte-lazy-loader';
-	import './global.css'; // Import your global styles
+	import './global.css';
 
 	let updatedProjects = projects.filter((d) => d.publish === 'TRUE');
-
 	const pathVideo =
 		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/video/';
-
 	let playbackRate = 1;
 	let imagesLoaded = false;
-	let loaded;
+
 	onMount(() => {
-		setTimeout(() => {
-			// Check if all images are complete after waiting
-			const imgElements = document.querySelectorAll('.project-img');
-			let allLoaded = true;
-			imgElements.forEach((img) => {
-				if (!img.complete) {
-					allLoaded = false;
-				}
+		// Check for images and videos loading state
+		const imgElements = document.querySelectorAll('.project-img img, .project-img video');
+
+		const checkIfLoaded = () => {
+			imagesLoaded = Array.from(imgElements).every((el) => el.complete || el.readyState === 4);
+		};
+
+		// If already loaded, set to true immediately
+		checkIfLoaded();
+
+		// Otherwise, wait for elements to load
+		if (!imagesLoaded) {
+			imgElements.forEach((el) => {
+				el.onload = el.onloadeddata = checkIfLoaded;
 			});
-			if (allLoaded) {
-				imagesLoaded = true;
-			} else {
-				// If not all images are loaded, set a fallback mechanism
-				imgElements.forEach((img) => {
-					img.onload = () => {
-						const allNowLoaded = Array.from(imgElements).every((img) => img.complete);
-						if (allNowLoaded) {
-							imagesLoaded = true;
-						}
-					};
-				});
-			}
-		}, 1000); // Wait for 1 second before checking
+		}
 	});
 </script>
 
@@ -77,6 +68,7 @@
 		</div>
 	</div>
 </section>
+
 {#if imagesLoaded}
 	<section>
 		<div class="projectContainer">
@@ -91,9 +83,9 @@
 											autoplay
 											playsinline
 											loop
+											loading="lazy"
 											muted
-											src="{pathVideo}{project.img_name}.mp4"
-											id={project.img_name}
+											src="/src/lib/assets/video/{project.img_name}.mp4"
 											bind:playbackRate
 										/>
 									</div>
@@ -107,22 +99,12 @@
 										/>
 									</div>
 								{/if}
-								<!-- {#if project.img_sketch}
-								<div
-									class="project-img"
-									role="button"
-									tabindex="0"
-									style={`background-image: url('${path}${project.img_sketch}.png'); opacity: 0.6;`}
-								/>
-							{/if} -->
 							</div>
 							<div class="project-info">
 								<h2 class="project-title">{project.page_title}</h2>
 								<p class="project-desc">{project.desc_text}</p>
 								<p class="project-desc-resp">{project.responsibilities}</p>
 								<p class="project-desc org">{project.org}</p>
-
-								<!-- <p class="project-desc"><b>Tools: </b>{project.tools}</p> -->
 								{#if project.awards}
 									<p class="project-desc"><b>Awards and mentions: </b>{project.awards}</p>
 								{/if}
@@ -134,7 +116,7 @@
 		</div>
 	</section>
 {:else}
-	<h2 style="margin: 0 auto;">Loading images...</h2>
+	<h2 style="margin: 0 auto;">Loading portfolio...</h2>
 {/if}
 
 <style>
