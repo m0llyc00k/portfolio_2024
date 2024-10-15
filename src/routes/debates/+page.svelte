@@ -15,10 +15,7 @@
 			loop
 			autoplay
 		>
-			<source
-				src="https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/video/debate-clip.mp4"
-				type="video/mp4"
-			/>
+			<source src="/videos/debate-clip.mp4" type="video/mp4" />
 			<track kind="captions" />
 			Your browser does not support the video tag.
 		</video>
