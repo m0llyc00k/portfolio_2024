@@ -85,7 +85,7 @@
 											loop
 											loading="lazy"
 											muted
-											src="/src/lib/assets/video/{project.img_name}.mp4"
+											src="/videos/{project.img_name}.mp4"
 											bind:playbackRate
 										/>
 									</div>

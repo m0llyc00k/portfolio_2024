@@ -18,7 +18,7 @@ const data = [
   },
   {
     "page_title": "Barron's Debate Tracker",
-    "project_url": "https://www.barrons.com/articles/trump-harris-debate-economy-talk-ace5460d",
+    "project_url": "/barrons-debate",
     "img_url": "",
     "img_name": "barrons-debate",
     "img_sketch": "",
@@ -575,7 +575,7 @@ const data = [
     "responsibilities": "Data analysis and mapmaking",
     "tools": "QGIS",
     "awards": "",
-    "publish": "TRUE"
+    "publish": "FALSE"
   },
   {
     "page_title": "3D Display Production",

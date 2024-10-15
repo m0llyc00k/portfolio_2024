@@ -2,10 +2,8 @@
 	import PageTemplate from '$lib/components/PageTemplate.svelte';
 	import polls from '$lib/data/Polls.ts';
 	import { onMount } from 'svelte';
-	import { goto } from '$app/navigation';
 
-	const path =
-		'https://raw.githubusercontent.com/m0llyc00k/portfolio_2024/main/src/lib/assets/img/';
+	const path = '/images/polls/';
 	let mounted = false;
 	let imagesLoaded = false;
 
@@ -40,7 +38,7 @@
 	<PageTemplate title="NYT/ Siena Polls">
 		<div slot="col-1" class="col-1">
 			{#each polls as img}
-				<img class="img" src="{path}{img.img_name}.png" alt={img.alt_text} />
+				<img loading="lazy" class="img" src="{path}{img.img_name}.png" alt={img.alt_text} />
 			{/each}
 		</div>
 
@@ -66,10 +64,15 @@
 		</div>
 	</PageTemplate>
 {:else}
-	<p>Loading images...</p>
+	<h2 class="loading">Loading images ...</h2>
 {/if}
 
 <style>
+	.loading {
+		margin: 0px auto;
+		position: relative;
+		top: 30vh;
+	}
 	.img {
 		width: 100%;
 		height: auto;
@@ -96,7 +99,13 @@
 		text-decoration: underline;
 	}
 	.col-1 {
-		max-width: 75%;
+		max-width: 80%;
 		margin: 0 auto;
+	}
+
+	@media (max-width: 500px) {
+		.col-1 {
+			max-width: 100%;
+		}
 	}
 </style>
